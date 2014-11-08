@@ -45,7 +45,7 @@ function pause() {
 
 function play() {
 	clearTimeout(timer);
-	setTimeout(displayAndAct, time);
+	timer = setTimeout(displayAndAct, time);
 }
 
 function faster() {
@@ -63,7 +63,7 @@ function displayAndAct() {
 
 	display();
 
-	setTimeout(displayAndAct, time);
+	timer = setTimeout(displayAndAct, time);
 }
 
 function agentsAct() {
