@@ -1,4 +1,4 @@
-var experience = [{
+var experiences = [{
   "title": "multiSSH",
   "resources": [{
     "type": "image",
