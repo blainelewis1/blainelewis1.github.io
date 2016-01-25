@@ -1,9 +1,0 @@
-[submodule "JSGrid"]
-	path = JSGrid
-	url = https://github.com/blainelewis1/JSGrid.git
-[submodule "blockster"]
-	path = blockster
-	url = https://github.com/mfritze/blockster.git
-[submodule "Resume"]
-		path = Resume
-		url = https://github.com/blainelewis1/Resume.git

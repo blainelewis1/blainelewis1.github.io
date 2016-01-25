@@ -1,0 +1,19 @@
+  <header>
+    {{item.title}}
+  </header>
+
+  <div class="resources" ng-repeat="resource in item.resources">
+    <img ng-src="{{resource.url}}" />
+  </div>
+
+  <summary>
+    {{item.summary}}
+  </summary>
+
+  <details>
+    {{item.details}}
+  </details>
+
+  <ul class="technologies" ng-repeat="technology in item.technologies">
+    <li>{{technology}}</li>
+  </ul>

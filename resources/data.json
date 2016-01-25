@@ -1,0 +1,29 @@
+var experience = [{
+  "title": "multiSSH",
+  "resources": [{
+    "type": "image",
+    "url": "/images/multissh.png"
+  }],
+  "summary": "Under the supervision of Professor Paul Lu I developed an application designed to overcome TCP bandwidth issues in the presence of packet loss over wide area networks. It was able to increase speed by nearly 2x and contributed to Paul's presentation at the High Performance Computing and Simulation conference in 2015. ",
+  "details": "When packet loss occurs the TCP slow start algorithm blah blah, spread it randomly over n streams and we mitigate the loss due to exponential nature of slow start.",
+  "technologies": ["Python", "Linux"]
+},
+{
+  "title": "Mylyn",
+  "resources": [{
+    "type": "image",
+    "url": "/images/mylyn.png"
+  }],
+  "summary": "As part of a national program for distributed development between undergraduate students I implemented a complex data structure for Mylyn.",
+  "technologies": ["Java", "Eclipse"]
+}];
+
+var plays = [{
+  "title": "Blockster",
+  "resources": [{
+    "type": "image",
+    "url": "images/blockster.png"
+  }],
+  "summary": "A friend and I were bored during a night off at an undergraduate research conference (UROC) and decided we should try making a game.",
+  "technologies": ["Javascript"]
+}];

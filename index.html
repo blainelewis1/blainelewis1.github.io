@@ -1,0 +1,65 @@
+<html ng-app="BlaineLewis">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style/reset.css">
+  <link rel="stylesheet" type="text/css" href="style/main.css">
+
+  <script src="/resources/data.json"></script>
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/js/controllers.js"></script>
+
+  <title>Blaine Lewis</title>
+</head>
+
+<body ng-controller="Controller">
+  <section id="intro">
+
+    <header>Blaine Lewis</header>
+
+    <div id="blurb">
+      <h2>I build things.</h2>
+      <p>I've freelanced as a full stack web developer, researched the cutting edge and driven features as a program manager.</p>
+      <p>No matter how I achieve it I'm driven by creating satisfaction.</p>
+    </div>
+
+    <div id="picture">
+      <img src="/images/me.jpg" />
+    </div>
+
+    <div class="seperator"></div>
+
+    <div id="social">
+      <!-- TODO: give different images based on screen size -->
+      <span id="github"><a href="www.github.com/blainelewis1"><img src="images/github/GitHub-Mark-64px.png" /></a></span>
+      <span id="linkedin"><a href="www.ca.linkedin.com/in/blainelewis1"><img src="images/linkedin/In-Black-66px-R.png"/></a></span>
+      <span id="resume"><a href="/resources/resume.pdf"><img src="images/pdf.png"/></a></span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <header>Delivered.</header>
+
+
+    <article ng-repeat="item in experiences" ng-include="'/resources/templates/item.html'"></article>
+  </section>
+
+  <section id="play">
+    <header>I'm in a constant state of play.</header>
+
+    <article ng-repeat="item in plays" ng-include="'/resources/templates/item.html'"></article>
+  </section>
+
+  <section id="about-me">
+    <article>
+      <header>Let's have a heart to heart.</header>
+
+      <p>
+        I deliver products that speak for themselves. I'm a technically strong engineer and I take great pride in being great at what I do. It's important that my work makes an impact, developing internal tools isn't usually my thing. I can drive product vision or develop with equal skill and when possible I love to do both. I've learnt to embrace the parts of my job I don't love whether it be developing an internal tool I didn't want to or doing some grunt work because everything makes me stronger.
+      </p>
+      <p>
+        I strongly believe that people are worth more than their work experience. I spend equal amounts of time developing career relevant skills as I do random skills. I constantly refresh my worldview by exposing myself to other countries and I build lasting relationships with everybody I meet. I often hike, play squash or rock climb. But I'm always on the lookout for more hobbies that can help me grow and meet more people.
+      </p>
+
+  </section>
+</body>
+</html>

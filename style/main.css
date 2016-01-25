@@ -1,0 +1,112 @@
+/** GLOBAL **/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  color: #222222;
+
+  margin:auto;
+}
+
+.seperator {
+  margin:auto;
+
+  margin-bottom:5vh;
+  margin-top:5vh;
+
+  width:20%;
+  height:5px;
+
+  background-color: #222222;
+  display:block;
+}
+
+section header {
+  font-size: 3em;
+}
+
+article {
+  padding: 5vh 5vw 5vh 5vw;
+  clear:both;
+}
+
+section {
+  clear: both;
+  padding: 2vh 2vw 2vh 2vw;
+}
+
+article header {
+  font-size: 2em;
+}
+
+article .text {
+  width:49%;
+  min-width:200px;
+  display:inline-block;
+  text-align:left;
+  padding:10px;
+
+  float: left;
+}
+
+article .resources {
+  width:49%;
+  display:inline-block;
+
+  float: right;
+}
+
+header {
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+/** INTRO **/
+
+#intro header {
+  font-size: 15vh;
+}
+
+#intro h2 {
+  font-size: 8vh;
+}
+
+#intro p {
+  font-size: 3vh;
+  width: 30%;
+  margin:auto;
+}
+
+#intro {
+  height: 100vh;
+  background-color: #779ECB;
+}
+
+/** EXPERIENCE **/
+
+#experience article .text {
+  float:right;
+}
+
+#experience article .resources {
+  float:left;
+}
+
+/** PLAY **/
+
+#play {
+  background-color: #FFB347;
+}
+
+#play article .text {
+  float:left;
+}
+
+#play article .resources {
+  float:right;
+}
+
+/** ABOUT-ME **/
