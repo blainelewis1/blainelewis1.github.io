@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "angular": "~1.4.9"
+    "angular": "~1.4.9",
+    "jquery": "~2.2.0"
   },
   "devDependencies": {},
   "scripts": {
