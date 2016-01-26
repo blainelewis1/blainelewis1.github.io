@@ -25,65 +25,76 @@ body {
   display:block;
 }
 
-section header {
-  font-size: 3em;
-}
-
-article {
-  padding: 5vh 5vw 5vh 5vw;
+section {
   clear:both;
 }
 
-section {
-  clear: both;
-  padding: 2vh 2vw 2vh 2vw;
+section header {
+  font-size:3em;
 }
 
-article header {
+/** INTRO **/
+
+#intro {
+  height: 100vh;
+  background-color: #779ECB;
+}
+
+#intro header {
+  font-size: 15vh;
+  padding-top: 5vh;
+}
+
+#intro h2 {
+  font-size: 8vh;
+  margin-top: 2vh;
+}
+
+#intro p {
+  font-size: 3vh;
+  max-width: 70vh;
+  margin:auto;
+  margin-top: 1vh;
+}
+
+#picture {
+  border-radius: 5vh;
+  width:10vh;
+  height:10vh;
+  margin:auto;
+  margin-top:5vh;
+  background-color: #222222;
+}
+
+/** ITEM **/
+
+.item {
+  clear:both;
+  margin:2vh;
+}
+
+.item header {
+  margin-bottom:2vh;
   font-size: 2em;
 }
 
-article .text {
+.item .text {
   width:49%;
   min-width:200px;
   display:inline-block;
   text-align:left;
-  padding:10px;
+  padding:1vh;
 
   float: left;
 }
 
-article .resources {
+.item .resources {
   width:49%;
   display:inline-block;
 
   float: right;
 }
 
-header {
-  margin: 2vh 2vw 2vh 2vw;
-}
-
-/** INTRO **/
-
-#intro header {
-  font-size: 15vh;
-}
-
-#intro h2 {
-  font-size: 8vh;
-}
-
-#intro p {
-  font-size: 3vh;
-  width: 30%;
-  margin:auto;
-}
-
-#intro {
-  height: 100vh;
-  background-color: #779ECB;
-}
 
 /** EXPERIENCE **/
 
@@ -110,4 +121,3 @@ header {
 }
 
 /** ABOUT-ME **/
-x`

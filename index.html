@@ -1,4 +1,4 @@
-<html ng-app="BlaineLewis">
+<html ng-strict-di ng-app="BlaineLewis">
 
 <head>
   <link rel="stylesheet" type="text/css" href="style/reset.css">
@@ -22,31 +22,28 @@
       <p>No matter how I achieve it I'm driven by creating satisfaction.</p>
     </div>
 
-    <div id="picture">
-      <img src="/images/me.jpg" />
+      <!--<img src="/images/me.jpg" />-->
+      <div id="picture">
     </div>
 
     <div class="seperator"></div>
 
     <div id="social">
       <!-- TODO: give different images based on screen size -->
-      <span id="github"><a href="www.github.com/blainelewis1"><img src="images/github/GitHub-Mark-64px.png" /></a></span>
-      <span id="linkedin"><a href="www.ca.linkedin.com/in/blainelewis1"><img src="images/linkedin/In-Black-66px-R.png"/></a></span>
-      <span id="resume"><a href="/resources/resume.pdf"><img src="images/pdf.png"/></a></span>
+      <span id="github"><a target="_blank" href="www.github.com/blainelewis1"><img src="images/github/GitHub-Mark-64px.png" /></a></span>
+      <span id="resume"><a target="_blank" href="/Resume"><img src="images/pdf.png"/></a></span>
+      <span id="linkedin"><a target="_blank" href="www.ca.linkedin.com/in/blainelewis1"><img src="images/linkedin/In-Black-66px-R.png"/></a></span>
     </div>
   </section>
 
   <section id="experience">
     <header>Delivered.</header>
-
-
-    <article ng-repeat="item in experiences" ng-include="'/resources/templates/item.html'"></article>
+    <article class="item" ng-repeat="item in experiences" ng-include="'/resources/templates/item.html'"></article>
   </section>
 
   <section id="play">
     <header>I'm in a constant state of play.</header>
-
-    <article ng-repeat="item in plays" ng-include="'/resources/templates/item.html'"></article>
+    <article class="item" ng-repeat="item in plays" ng-include="'/resources/templates/item.html'"></article>
   </section>
 
   <section id="about-me">
