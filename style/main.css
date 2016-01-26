@@ -15,8 +15,8 @@ body {
 .seperator {
   margin:auto;
 
-  margin-bottom:5vh;
-  margin-top:5vh;
+  margin-bottom:7vh;
+  margin-top:7vh;
 
   width:20%;
   height:5px;
@@ -41,28 +41,28 @@ section header {
 }
 
 #intro header {
-  font-size: 15vh;
+  font-size: 15vw;
   padding-top: 5vh;
 }
 
 #intro h2 {
-  font-size: 8vh;
   margin-top: 2vh;
+  font-size: 8vw;
 }
 
 #intro p {
   font-size: 3vh;
   max-width: 70vh;
   margin:auto;
-  margin-top: 1vh;
+  margin-top: 2vh;
 }
 
 #picture {
-  border-radius: 5vh;
-  width:10vh;
-  height:10vh;
+  border-radius: 10vh;
+  width:20vh;
+  height:20vh;
   margin:auto;
-  margin-top:5vh;
+  margin-top:7vh;
   background-color: #222222;
 }
 
