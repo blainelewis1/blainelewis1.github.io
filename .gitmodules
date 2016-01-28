@@ -4,3 +4,6 @@
 [submodule "projects/EarthquakeVisualizer"]
 	path = projects/EarthquakeVisualizer
 	url = https://github.com/blainelewis1/EarthquakeVisualizer.git
+[submodule "projects/Blockster"]
+	path = projects/Blockster
+	url = https://github.com/mfritze/Blockster.git

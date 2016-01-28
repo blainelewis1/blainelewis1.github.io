@@ -1,12 +1,15 @@
 /** GLOBAL **/
 
+img {
+  max-width: 100%;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
   font-family: Helvetica, sans-serif;
-  text-align: center;
   color: #222222;
 
   margin:auto;
@@ -127,20 +130,21 @@ section header {
 /* TODO: how do I make buttons and forms responsive? */
 input[type=button] {
   background-color:#0077BE;
-  font-size: 2em;
+  font-size: 1em;
   height: 5vh;
   color: white;
   border: none;
   margin-top: 1vh;
+  padding:1vh;
 }
 
 input:not([type=submit]):not([type=file]):not([type=button]) {
   border:solid;
   border-color:#BBBBBB;
   border-width: thin;
-  border-radius: 3px;
+  border-radius: 1vh;
   font-family: Helvetica;
-  font-size: 1.5em;
+  font-size: .75em;
   padding:1vh;
   margin: .5vh 0vw .5vh 0vw;
 }
@@ -150,19 +154,30 @@ input:not([type=submit]):not([type=file]):not([type=button]) {
 .expander {
   background-color:#0077BE;
   color: white;
-  font-size: 1em;
+  font-size: .75em;
   height:4vh;
   line-height: 3vh;
   margin:auto;
-  display:inline-block;
   vertical-align: middle;
   text-align: center;
   padding: 0.5vh 0.5vw 0.5vh 0.5vw;
+  cursor:default;
 }
+
+.expander:after {
+  margin-left:0.25vw;
+}
+
+.expander:before {
+  margin-right:0.25vw;
+}
+
 .expander.up:after, .expander.up:before  {
   content:"\25B2";
+
 }
 
 .expander.down:after, .expander.down:before {
   content:"\25BC";
+
 }
