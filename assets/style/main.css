@@ -121,3 +121,48 @@ section header {
 }
 
 /** ABOUT-ME **/
+
+
+/** FORMS **/
+/* TODO: how do I make buttons and forms responsive? */
+input[type=button] {
+  background-color:#0077BE;
+  font-size: 2em;
+  height: 5vh;
+  color: white;
+  border: none;
+  margin-top: 1vh;
+}
+
+input:not([type=submit]):not([type=file]):not([type=button]) {
+  border:solid;
+  border-color:#BBBBBB;
+  border-width: thin;
+  border-radius: 3px;
+  font-family: Helvetica;
+  font-size: 1.5em;
+  padding:1vh;
+  margin: .5vh 0vw .5vh 0vw;
+}
+
+
+/** UTILITIES **/
+.expander {
+  background-color:#0077BE;
+  color: white;
+  font-size: 1em;
+  height:4vh;
+  line-height: 3vh;
+  margin:auto;
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.5vh 0.5vw 0.5vh 0.5vw;
+}
+.expander.up:after, .expander.up:before  {
+  content:"\25B2";
+}
+
+.expander.down:after, .expander.down:before {
+  content:"\25BC";
+}
