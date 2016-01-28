@@ -1,5 +1,5 @@
 [submodule "Resume"]
-	path = Resume
+	path = projects/Resume
 	url = https://github.com/blainelewis1/Resume
 [submodule "projects/EarthquakeVisualizer"]
 	path = projects/EarthquakeVisualizer
