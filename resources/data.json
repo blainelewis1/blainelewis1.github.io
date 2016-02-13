@@ -16,6 +16,15 @@ var experiences = [{
   }],
   "summary": "As part of a national program for distributed development between undergraduate students I implemented a complex data structure for Mylyn.",
   "technologies": ["Java", "Eclipse"]
+},
+{
+  "title": "Kelsey Prud'homme",
+  "resources": [{
+    "type": "image",
+    "url": "/images/kelseyprudhomme.png"
+  }],
+  "summary": "I built a website for one of my friends.",
+  "technologies": ["MySQL", "PHP", "CSS", "Javascript", "jQuery"]
 }];
 
 var plays = [{
@@ -26,4 +35,13 @@ var plays = [{
   }],
   "summary": "A friend and I were bored during a night off at an undergraduate research conference (UROC) and decided we should try making a game.",
   "technologies": ["Javascript"]
+},
+{
+  "title": "Algomations",
+  "resources": [{
+    "type": "image",
+    "url": "images/algomations.png"
+  }],
+  "summary": "I absolutely love math and algorithms but nothing rivals combining that with making them look nice. And so I make algomations where I learn a new algorithm (usually math related) and create an animation to show it!",
+  "technologies": ["Javascript", "Math", "CSS"]
 }];

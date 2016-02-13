@@ -1,20 +1,22 @@
 <div class="resources" ng-repeat="resource in item.resources">
-  <img ng-src="{{resource.url}}" />
+    <img ng-src="{{resource.url}}" />
 </div>
 <div class="text">
-  <header>
-    {{item.title}}
-  </header>
+    <header>
+        {{item.title}}
+    </header>
 
-  <summary>
-    {{item.summary}}
-  </summary>
+    <summary>
+        {{item.summary}}
+    </summary>
 
-  <details>
-    {{item.details}}
-  </details>
+    <!--
+      <details>
+        {{item.details}}
+      </details>
+    -->
 
-  <ul class="technologies" ng-repeat="technology in item.technologies">
-    <li>{{technology}}</li>
-  </ul>
-</text>
+    <ul class="technologies" >
+        <li ng-repeat="technology in item.technologies">{{technology}}</li>
+    </ul>
+</div>

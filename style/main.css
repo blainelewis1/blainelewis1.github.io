@@ -1,0 +1,145 @@
+/*csslint ids:false*/
+h2 {
+    font-size: 4em;
+}
+
+section {
+    padding: 10vh 10vw 10vh 10vw;
+    clear: both;
+}
+section header {
+    font-size: 3em;
+}
+
+/** INTRO **/
+
+#intro {
+    background-color: #779ECB;
+    text-align: center;
+    font-size: 1.5vh;
+    padding: 10vh 5vw 8vh 5vw;               /* 20 */
+}
+
+#intro header {
+    font-size: 7em;                /* 7 * 1.5 =  10.5 */
+}
+
+#blurb > * {                            /* 2 */
+    margin-top: 2vh;                /* 4 * 1.5 =    8 */
+}
+
+#blurb p {
+    font-size: 2em;                   /* 2 * 1.5 = 3 */
+    /* TODO: this width could be weird...   */
+    /* max-width: 70vh; */
+    margin: auto;
+    margin-top: 2vh;                            /* 2 */
+}
+
+@media (min-width: 500px) {
+    #blurb p {
+        max-width:70vw;
+    }
+}
+
+@media (min-width: 700px) {
+    #blurb p {
+        max-width:30vw;
+    }
+}
+
+#blurb {
+    /* TODO: this width could be weird...   */
+    margin: auto;
+    height: 27vh;
+}
+
+
+#picture img {
+    max-height: 25vh;                           /* 25 */
+}
+
+#picture {
+    margin: auto;
+    margin-top: 7vh;                            /* 7 */
+    /*background-color: #222222;*/
+}
+
+#social {
+    margin-top: 7vh;                            /* 7 */
+    height: 5vh;
+}
+
+/** ITEM **/
+
+.item {
+    clear: both;
+    margin: 0 5vw 15vh 5vw;
+    text-align: left;
+}
+.item:first-of-type {
+    margin-top: 15vh;
+}
+.item header {
+    margin-bottom: 2vh;
+    font-size: 2em;
+}
+.item .text, .item .resources {
+    width: 48%;
+    display: inline-block;
+}
+.item .text {
+    float: left;
+}
+.item .resources {
+    float: right;
+}
+.item img {
+    border-radius: 1em;
+}
+
+@media (max-width: 700px) {
+
+    .item .text, .item .resources {
+        max-width:100%;
+        width:100%;
+        float:none;
+    }
+
+
+    .item .text {
+        margin-top:3vh;
+    }
+
+}
+
+/** EXPERIENCE **/
+#experience {
+    background-color: #90EE90;
+}
+
+#experience article .text {
+    float: right;
+}
+
+#experience article .resources {
+    float: left;
+}
+
+/** PLAY **/
+
+#play {
+    background-color: #FFB347;
+}
+#play article .text {
+    float: left;
+}
+#play article .resources {
+    float: right;
+}
+
+/** ABOUT-ME **/
+
+#about-me {
+    background-color: #CFCFC4;
+}

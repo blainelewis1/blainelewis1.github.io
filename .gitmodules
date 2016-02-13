@@ -7,3 +7,6 @@
 [submodule "projects/Blockster"]
 	path = projects/Blockster
 	url = https://github.com/mfritze/Blockster.git
+[submodule "projects/Algomations"]
+	path = projects/Algomations
+	url = https://github.com/blainelewis1/Algomations.git
