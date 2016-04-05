@@ -17,6 +17,15 @@ var experiences = [{
   "summary": "As part of a national program for distributed development between undergraduate students I implemented a complex data structure for Mylyn.",
   "technologies": ["Java", "Eclipse"]
 },
+/*{
+  "title": "Test",
+  "resources": [{
+    "type": "image",
+    "url": "/images/kelseyprudhomme.png"
+  }],
+  "summary": "abcdefghijklmnopqrstuvwxz<br/>abcdefghijklmnopqrstuvwxzabcdefghijklmnopqrstuvwxz</br>abcdefghijklmnopqrstuvwxzabcdefghijklmnopqrstuvwxzabcd<br />abcdefghijklmnopqrstuvwxzabcdefghijklmnopqrstuvwxzabcdefghijklmnopqrstuvwxz",
+  "technologies": ["MySQL", "PHP", "CSS", "Javascript", "jQuery"]
+},*/
 {
   "title": "Kelsey Prud'homme",
   "resources": [{

@@ -7,11 +7,15 @@
     <link rel="stylesheet" type="text/css" href="assets/style/main.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!--
 
     <script src="/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    -->
 
     <script src="/resources/data.json"></script>
     <script src="/scripts/controllers.js"></script>
@@ -21,6 +25,7 @@
 
 <body ng-controller="Controller">
     <!-- TODO: Create details pages for each project? -->
+
     <section id="intro">
 
         <header>Blaine Lewis</header>
@@ -28,7 +33,7 @@
         <div id="blurb">
             <h2>I build things.</h2>
             <p>I've freelanced as a full stack web developer, researched the cutting edge and driven features as a program manager.</p>
-            <p>No matter how I achieve it I'm driven by creating satisfaction.</p>
+            
         </div>
 
 
@@ -52,21 +57,20 @@
     </section>
 
     <section id="play">
-        <header>I'm in a constant state of play.</header>
+        <header>I'm constantly playing.</header>
         <article class="item clearfix" ng-repeat="item in plays" ng-include="'/resources/templates/item.html'"></article>
     </section>
 
     <section id="about-me">
         <article>
-            <header>Let's have a heart to heart.</header>
+            <header>About me.</header>
 
             <p>
-                I deliver products that speak for themselves. I'm a technically strong engineer and I take great pride in being great at what I do. It's important that my work makes an impact, developing internal tools isn't usually my thing. I can drive product vision
-                or develop with equal skill and when possible I love to do both. I've learnt to embrace the parts of my job I don't love whether it be developing an internal tool I didn't want to or doing some grunt work because everything makes me stronger.
+                I take pride in paying attention to the things people won't notice until they look closely. Final products should speak for themselves.
             </p>
             <p>
-                I strongly believe that people are worth more than their work experience. I spend equal amounts of time developing career relevant skills as I do random skills. I constantly refresh my worldview by exposing myself to other countries and I build lasting
-                relationships with everybody I meet. I often hike, play squash or rock climb. But I'm always on the lookout for more hobbies that can help me grow and meet more people.
+                In my spare time I'm hiking or playing squash. I climb a lot and ski when there's snow. I'm sure there's more. When I'm not outside I'm probably glued to my laptop building something or learning a new language but usually both.
+                I've been to more countries than I can count with my fingers and almost my toes.
             </p>
 
     </section>

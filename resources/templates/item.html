@@ -6,8 +6,8 @@
         {{item.title}}
     </header>
 
-    <summary>
-        {{item.summary}}
+    <summary ng-bind-html="item.summary | to_trusted">
+
     </summary>
 
     <!--

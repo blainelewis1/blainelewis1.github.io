@@ -13,6 +13,11 @@ body {
   color: #222222;
 
   margin:auto;
+  word-wrap: break-word;
+}
+
+article {
+    line-height: 130%;
 }
 
 .seperator {
@@ -48,7 +53,7 @@ input:not([type=submit]):not([type=file]):not([type=button]) {
   font-family: Helvetica;
   font-size: .75em;
   padding:1vh;
-  margin: .5vh 0vw .5vh 0vw;
+  margin: .5vh 0 .5vh 0;
 }
 
 
@@ -74,12 +79,12 @@ input:not([type=submit]):not([type=file]):not([type=button]) {
   margin-right:0.25vw;
 }
 
-.expander.up:after, .expander.up:before  {
+.up:after, .up:before  {
   content:"\25B2";
 
 }
 
-.expander.down:after, .expander.down:before {
+.down:after, .down:before {
   content:"\25BC";
 
 }
@@ -109,7 +114,7 @@ html[xmlns] .clearfix {
 
 .technologies li {
     display: inline-block;
-    background-color: #0077BE;
+    background-color: #779ECB;
 
     border-radius: 0.5em;
 
