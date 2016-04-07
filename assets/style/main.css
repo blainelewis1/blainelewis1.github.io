@@ -4,6 +4,11 @@ img {
   max-width: 100%;
 }
 
+@font-face {
+    font-family: HelveticaBold;
+    src: url('/assets/fonts/Helvetica-Bold.otf?') format("opentype");
+}
+
 * {
     box-sizing: border-box;
 }
@@ -114,12 +119,32 @@ html[xmlns] .clearfix {
 
 .technologies li {
     display: inline-block;
-    background-color: #779ECB;
+    /*background-color: #779ECB;*/
 
-    border-radius: 0.5em;
+    /*border-radius: 0.5em;
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
 
-    padding: 1vh 1vw 1vh 1vw;
+    /*padding: 1vh 1vw 1vh 1vw;*/
+    padding: 0.5vh 0.5vw 0.5vh 0.5vw;
     margin-right:0.5vw;
+}
+
+.technologies li::before, .technologies li::after {
+    font-family: HelveticaBold;
+    font-weight: bolder;
+    font-size:1.5em;
+}
+
+.technologies li::after {
+    content:'>';
+    padding-left:0.5vw;
+}
+
+.technologies li::before {
+    content:'<';
+    padding-right:0.5vw;
 }
 
 .technologies li:last-of-type {

@@ -2,7 +2,7 @@ var experiences = [{
   "title": "multiSSH",
   "resources": [{
     "type": "image",
-    "url": "/images/multissh.png"
+    "url": "/images/multisshhost.png"
   }],
   "summary": "Under the supervision of Professor Paul Lu I developed an application designed to overcome TCP bandwidth issues in the presence of packet loss over wide area networks. It was able to increase speed by nearly 2x and contributed to Paul's presentation at the High Performance Computing and Simulation conference in 2015. ",
   "details": "When packet loss occurs the TCP slow start algorithm blah blah, spread it randomly over n streams and we mitigate the loss due to exponential nature of slow start.",
