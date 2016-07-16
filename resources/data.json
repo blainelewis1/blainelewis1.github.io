@@ -36,7 +36,7 @@ var experiences = [{
   "technologies": ["MySQL", "PHP", "CSS", "Javascript", "jQuery"]
 }];
 
-var plays = [{
+var tinkers = [{
   "title": "Blockster",
   "resources": [{
     "type": "image",
