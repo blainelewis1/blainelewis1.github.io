@@ -53,4 +53,40 @@ var plays = [{
   }],
   "summary": "I absolutely love math and algorithms but nothing rivals combining that with making them look nice. And so I make algomations where I learn a new algorithm (usually math related) and create an animation to show it!",
   "technologies": ["Javascript", "Math", "CSS"]
+},
+{
+  "title": "Quadcopter",
+  "resources": [{
+    "type": "image",
+    "url": "images/quadcopter.png"
+  }],
+  "summary": "During the summer of 2014 a friend and I decided it would be awesome to build a quadopter. We did our research and were able to build one from \"scratch\". I just wish I was better at flying it!",
+  "technologies": []
+},
+{
+  "title": "Sniffr",
+  "resources": [{
+    "type": "image",
+    "url": "images/sniffr.png"
+  }],
+  "summary": "It's tinder! But for doggy play dates. Sign your dog up, list his or her interests and make your way on over to the nearest dog park! You'll be able to filter based on gender as well as size of dog. I doubt your yorkie plays well with a pitbull.",
+  "technologies": ["Node.js", "Javascript", "Java"]
+},
+{
+  "title": "Raspberry Pi Experiments",
+  "resources": [{
+    "type": "image",
+    "url": "images/pi.png"
+  }],
+  "summary": "I'm always playing with my raspberry pi. Recently I set up a web server on it and was able to use that to turn LEDs on and off. Next I plan on buying a couple more and playing with Hadoop.",
+  "technologies": ["Python"]
+},
+{
+  "title": "Computer Vision",
+  "resources": [{
+    "type": "image",
+    "url": "images/computervision.png"
+  }],
+  "summary": "One of the coolest course projects I've ever done. As a group we applied machine learning algorithms like neural networks and support vector machines to a computer vision problem. The problem was a common problem determining handwritten digits known as MNIST.",
+  "technologies": ["Matlab"]
 }];
