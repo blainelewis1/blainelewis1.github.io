@@ -10,3 +10,12 @@
 [submodule "projects/Algomations"]
 	path = projects/Algomations
 	url = https://github.com/blainelewis1/Algomations.git
+[submodule "projects/Balance"]
+	path = projects/Balance
+	url = https://github.com/blainelewis1/Balance
+[submodule "projects/Schools"]
+	path = projects/Schools
+	url = https://github.com/blainelewis1/Schools
+[submodule "projects/Pongin"]
+	path = projects/Pongin
+	url = https://github.com/blainelewis1/Pongin
