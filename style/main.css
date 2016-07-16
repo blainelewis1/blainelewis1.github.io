@@ -15,10 +15,11 @@ section header {
 /** INTRO **/
 
 #intro {
-    background-color: #779ECB;
+    background-color: #9090AA;
     text-align: center;
     font-size: 1.5vh;
     padding: 10vh 5vw 8vh 5vw;               /* 20 */
+    height: 100vh;
 }
 
 #intro header {
@@ -52,7 +53,6 @@ section header {
 #blurb {
     /* TODO: this width could be weird...   */
     margin: auto;
-    height: 27vh;
 }
 
 
@@ -67,8 +67,7 @@ section header {
 }
 
 #social {
-    margin-top: 7vh;                            /* 7 */
-    height: 5vh;
+    margin-top: 5vh;                            /* 7 */
 }
 
 /** ITEM **/
