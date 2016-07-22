@@ -1,9 +1,4 @@
-//TODO: create a little tab at the bottom.
-//TODO: inject our template into the HTML
-
 (function() {
-
-    //TODO: test if url is my personal page in the script that loads all this.
 
     var dependencies = [
          /*{ready : function() {return typeof angular !== "undefined" && angular.version.major === 1;}, url : "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"},*/

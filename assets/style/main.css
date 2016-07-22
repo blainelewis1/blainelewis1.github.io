@@ -39,7 +39,6 @@ article {
 }
 
 /** FORMS **/
-/* TODO: how do I make buttons and forms responsive? */
 input[type=button] {
   background-color:#0077BE;
   font-size: 1em;
