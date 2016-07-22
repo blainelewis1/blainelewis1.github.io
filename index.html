@@ -38,44 +38,45 @@
 </head>
 <body ng-controller="Controller">
     <section id="intro">
-
+    <div>
         <header>Blaine Lewis</header>
 
         <div id="blurb">
-            <h2>Man of many hobbies.</h2>
-            <p>Developer of all sorts. Researcher.<br />Product Manager. Tinkerer.<br />Writer.</p>
+            <p>Developer of all sorts. Researcher.<br />Product Manager. Tinkerer.</p>
             <p>This is a page all about me and the things I've built. If you're interested check out my <a target="_blank" href="/portfolio">portfolio</a> or <a target="_blank" href="/resume">resume</a>.</p>
         </div>
         <div id="social">
-            <!-- TODO: give different images based on screen size -->
-            <span id="github"><a target="_blank" href="https://github.com/blainelewis1"><img src="images/github/GitHub-Mark-32px.png" /></a></span>
-            <span id="linkedin"><a target="_blank" href="https://ca.linkedin.com/in/blainelewis1"><img src="images/linkedin/In-Black-34px-R.png"/></a></span
-            <span id="medium"><a target="_blank" href="https://medium.com/blainelewis"><img src="images/medium.png"/></a></span>
-            <span id="instagram"><a target="_blank" href="https://instagram.com/blaine.lewis.1"><img src="images/instagram.png"/></a></span>
+            <span id="github"><a target="_blank" href="https://github.com/blainelewis1"><img src="images/logos/github/GitHub-Mark-120px-plus.png" /></a></span>
+            <span id="linkedin"><a target="_blank" href="https://ca.linkedin.com/in/blainelewis1"><img src="images/logos/linkedin/In-Black-128px-TM.png"/></a></span
+            <span id="medium"><a target="_blank" href="https://medium.com/@blainelewis"><img src="images/logos/medium/medium-m-light-200px.png"/></a></span>
+            <span id="instagram"><a target="_blank" href="https://instagram.com/blaine.lewis.1"><img src="images/logos/instagram/glyph-logo_May2016.png"/></a></span>
         </div>
+    </div>
     </section>
 
     <section id="tinkers">
         <header><a href="/tinkers">Tinkers</a></header/>
-        Have a play, heres a bunch of experiments and doohickeys I built or am building! If they're broken let me know and I'll fix it.
+        Have a play, heres a bunch of experiments and doohickeys.
         <article class="item clearfix" ng-repeat="item in tinkers" ng-include="'/resources/templates/item.html'"></article>
+        <a href="tinkers">See more</a>
     </section>
 
     <section id="goals" class="stoplookinghereIknowisaiditwasntagoal">
         <header>Things that are going to happen.</header/>
-        <article>These aren't goals. Goals are things you strive for, work towards. These are just things I'm going to do.
-        You can't stop me, I can't stop me. I'm going to climb a big wall. I'm going to do a thru hike (probably pacific crest).</article>
+        <article>These aren't goals. Goals are things you strive for, work towards and dream of. These are just things I'm going to do.
+        I'm going to climb a big wall. I'm going to do a thru hike (probably pacific crest). </article>
+        <article class="item clearfix" ng-repeat="item in seriouslytheyrenotgoals" ng-include="'/resources/templates/item.html'"></article>
     </section>
 
     <section id="about-me">
         <header>About me</header>
-
+        <!-- TODO: picture of me here, sits on left side unless mobile in which case it goes below about me and above the blurb
         <article>
           <p>
-            I'm a twenty something who's just finishing up a degree specialising in computer sciences. I might do a master's degree in Human Computer Interaction, but we shall see. I'm from Edmonton, Canada but I've lived in a few places. I'm happiest near mountains but even happier if there's an ocean nearby too.
-            I built my first game in Adobe Flash when I was 13 years old and I've been in love ever since (but definitely not in love with Adobe Flash). I'm always tinkering with some new language or something. At the moment I'm reading a ton of books on Javascript and writing more code in it that I thought possible,
+            I'm a twenty something who's just finishing up a degree specialising in computer sciences. I'm from Edmonton, Canada but I've lived in a few places. I'm happiest near mountains but even happier if there's an ocean nearby too.
+            I built my first game in Adobe Flash when I was 13 years old and I've been in love ever since (but definitely not in love with Adobe Flash). I'm always learning with some new language or something. At the moment I'm reading a ton of books on Javascript and writing everything I can think of in it. It's my favourite language if you ignore all of its quirks.
           </p>
-
+          <header>Contact Me</header>
           <p>
             Wanna collab? Need a belayer, hiking partner, or whatever? Contact me, I'll be sure to get back at you.
             Special note: If you're looking for free things I'd love help you. Granted, you need to have a reason. Like if you run a non profit and want some development like a website or something I'll do my best!
