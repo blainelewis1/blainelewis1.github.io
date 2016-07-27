@@ -37,22 +37,38 @@
         <header>Blaine Lewis</header>
 
         <div id="blurb">
-            <p>Developer of all sorts. Researcher.<br />Product Manager. Tinkerer.</p>
+            <p>Developer of all sorts. Researcher.<br />Product manager. Tinkerer.</p>
             <p>This is a page all about me and the things I've built. If you're interested check out my <a target="_blank" href="/portfolio">portfolio</a> or <a target="_blank" href="/resume">resume</a>.</p>
         </div>
         <div id="social">
             <span id="github"><a target="_blank" href="https://github.com/blainelewis1"><img src="images/logos/github/GitHub-Mark-120px-plus.png" /></a></span>
             <span id="linkedin"><a target="_blank" href="https://ca.linkedin.com/in/blainelewis1"><img src="images/logos/linkedin/In-Black-128px-TM.png"/></a></span
-            <span id="medium"><a target="_blank" href="https://medium.com/@blainelewis"><img src="images/logos/medium/medium-m-light-200px.png"/></a></span>
             <span id="instagram"><a target="_blank" href="https://instagram.com/blaine.lewis.1"><img src="images/logos/instagram/glyph-logo_May2016.png"/></a></span>
         </div>
     </div>
     </section>
 
+    <!--TODO: there should be a file with all the metadatas and then I'll use a list of featured ids that load these ones in. -->
+
     <section id="tinkers">
-        <header><a href="/tinkers">Tinkers</a></header/>
+        <header>Tinkers</header/>
         Have a play, heres a bunch of experiments and doohickeys.
-        <article class="item clearfix" ng-repeat="item in tinkers" ng-include="'/resources/templates/item.html'"></article>
+        <article class="item clearfix" ng-repeat="tinker in tinkers | is_set : 'featured' | orderBy : 'featured' | limitTo : 3">
+            <div class="resources" ng-repeat="resource in tinker.resources">
+                <img ng-src="{{resource.url}}" />
+            </div>
+            <div class="text">
+                <header>
+                    <a ng-href="{{tinker.url}}">{{tinker.title}}</a>
+                </header>
+                <summary>
+                    {{tinker.summary}}
+                </summary>
+                <!--<ul class="technologies" >
+                    <li ng-repeat="technology in tinker.technologies">{{technology}}</li>
+                </ul>-->
+            </div>
+        </article>
         <a href="tinkers">See more</a>
     </section>
 
@@ -65,7 +81,7 @@
 
     <section id="about-me">
         <header>About me</header>
-        <!-- TODO: picture of me here, sits on left side unless mobile in which case it goes below about me and above the blurb
+        <!-- TODO: picture of me here, sits on left side unless mobile in which case it goes below about me and above the blurb-->
         <article>
           <p>
             I'm a twenty something who's just finishing up a degree specialising in computer sciences. I'm from Edmonton, Canada but I've lived in a few places. I'm happiest near mountains but even happier if there's an ocean nearby too.

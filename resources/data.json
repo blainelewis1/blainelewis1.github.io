@@ -36,7 +36,7 @@ var experiences = [{
   "technologies": ["MySQL", "PHP", "CSS", "Javascript", "jQuery"]
 }];
 
-var tinkers = [{
+/*var tinkers = [{
   "title": "Blockster",
   "resources": [{
     "type": "image",
@@ -89,5 +89,6 @@ var tinkers = [{
   }],
   "summary": "One of the coolest course projects I've ever done. As a group we applied machine learning algorithms like neural networks and support vector machines to a computer vision problem. The problem was a common problem determining handwritten digits known as MNIST.",
   "technologies": ["Matlab"]
-}];
+}];*/
+
 var seriouslytheyrenotgoals = [];

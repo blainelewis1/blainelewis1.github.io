@@ -1,8 +1,7 @@
 (function() {
-
-    var dependencies = [
-         /*{ready : function() {return typeof angular !== "undefined" && angular.version.major === 1;}, url : "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"},*/
-                         {ready : function() {return typeof $ !== "undefined";}, url : "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"}];
+    //TODO: move into assets
+    //TODO: tinkers/name is the id. 
+    var dependencies = [{ready : function() {return typeof $ !== "undefined";}, url : "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"}];
 
     function check_requirements() {
         for(var i = 0; i < dependencies.length; i++) {
@@ -55,7 +54,8 @@
     }
 
     function inject_element() {
-        $.getJSON("metadata.json", function(data) {
+        $.getJSON("/assets/resources/tinkers.json", function(data) {
+
             var $button = $("<div>").addClass("project-info-button").text("+").click(toggle_info);
 
             var $project_info = $("<div>").addClass("project-info");

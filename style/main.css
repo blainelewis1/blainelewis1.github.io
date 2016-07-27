@@ -23,7 +23,7 @@ section header {
 /** INTRO **/
 
 #intro {
-    background-color: #aaaaaa;
+    background-color: #a0a0a0;
 
     text-align: center;
     font-size: 1.5vh;
@@ -46,6 +46,7 @@ section header {
 
 #social img {
     height:4vh;
+    padding-right: 1%;
 }
 
 #social {
