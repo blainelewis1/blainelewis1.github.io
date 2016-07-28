@@ -1,16 +1,16 @@
 /*csslint ids:false*/
+/*csslint box-model:false*/
 
-.arrow {
-    position: absolute;
-    margin: -20vh auto;
-    right: 0;
-    width: 30vh;
-    height:45vh;
-    left: 0;
-    background-image: url('/images/transition.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+html {
+    overflow-y:scroll;
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -55,17 +55,13 @@ section header {
     flex-direction: column;
     justify-content: center;
 }
-#about-me {
-    background-color: #1F1F1F;
-}
-
 
 #intro p, #about-me p {
-    color: #555555;
+    color: #666666;
 }
 
 #intro header {
-    font-size: 7em;                /* 7 * 1.5 =  10.5 */
+    font-size: 7em;
 }
 
 #social img {
@@ -74,19 +70,17 @@ section header {
 }
 
 #social {
-    margin-top: 3vh;                            /* 7 */
+    margin-top: 3vh;
 }
 
-#blurb > * {                            /* 2 */
-    margin-top: 2vh;                /* 4 * 1.5 =    8 */
+#blurb > * {
+    margin-top: 2vh;
 }
 
 #blurb p {
-    font-size: 2em;                   /* 2 * 1.5 = 3 */
-    /* TODO: this width could be weird...   */
-    /* max-width: 70vh; */
+    font-size: 2em;
     margin: auto;
-    margin-top: 2vh;                            /* 2 */
+    margin-top: 2vh;
 }
 
 @media (min-width: 500px) {
@@ -107,86 +101,99 @@ section header {
 
 #tinkers {
     background-color: #404040;
+    background-color: #666666;
 }
 
-#tinkers article {
+article:first-of-type {
     margin-top:32vh;
 }
 
-#picture img {
-    max-height: 25vh;                           /* 25 */
+article:last-of-type {
+    margin-bottom:15vh;
 }
 
-#picture {
-    margin: auto;
-    margin-top: 7vh;                            /* 7 */
-    /*background-color: #222222;*/
-}
-
-/** ITEM **/
-
-.item {
+article {
     clear: both;
-    margin: 0 5vw 15vh 5vw;
+    margin: 0 5vw 5vh 5vw;
     text-align: left;
 }
-.item:first-of-type {
-    margin-top: 15vh;
-}
-.item header {
+
+article header {
     margin-bottom: 2vh;
     font-size: 2em;
 }
-.item .text, .item .resources {
+
+.arrow {
+    position: absolute;
+    margin: -20vh auto;
+    right: 0;
+    width: 30vh;
+    height:45vh;
+    left: 0;
+    background-image: url('/images/transition.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    vertical-align: middle;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+article .text, article .resources {
     width: 48%;
     display: inline-block;
 }
-.item .text {
+article .text {
     float: left;
 }
-.item .resources {
+article .resources {
     float: right;
 }
-.item img {
+
+#tinkers img {
     border-radius: 1em;
 }
 
 @media (max-width: 700px) {
-
-    .item .text, .item .resources {
+    article .text, article .resources {
         max-width:100%;
         width:100%;
         float:none;
     }
-
-
-    .item .text {
+    article .text {
         margin-top:3vh;
     }
-
 }
 
-/** ABOUT-ME **/
+#about-me {
+    background-color: #1F1F1F;
+    min-height:100vh;
+}
 
+#about-me #picture {
+    width:29%;
+    float:left;
+}
 
+#about-me article {
+    float:right;
+    width:69%;
+}
 
 
 /** GLOBAL **/
-
-img {
-  max-width: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
 
 article {
     line-height: 130%;
 }
 
 .seperator {
-  margin:auto;
 
   margin-bottom:7vh;
   margin-top:7vh;
