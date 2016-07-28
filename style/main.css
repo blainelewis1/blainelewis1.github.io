@@ -1,5 +1,18 @@
 /*csslint ids:false*/
 
+.arrow {
+    position: absolute;
+    margin: -20vh auto;
+    right: 0;
+    width: 30vh;
+    height:45vh;
+    left: 0;
+    background-image: url('/images/transition.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 body {
     color: #1a1a1a;
     font-family: Helvetica, Arial, sans-serif;
@@ -94,6 +107,10 @@ section header {
 
 #tinkers {
     background-color: #404040;
+}
+
+#tinkers article {
+    margin-top:32vh;
 }
 
 #picture img {

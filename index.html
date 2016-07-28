@@ -38,10 +38,18 @@
         </div>
     </div>
     </section>
-<img src="/images/transition.png" />
+        <!-- <img src="/images/transition.png" />
+        <img src="/images/transition.png" style="
+    position: absolute;
+    margin: -60px auto;
+    right: 0;
+    width: 200px;
+    left: 0;
+    "> -->
+
     <section id="tinkers">
-        <header>Tinkers</header/>
-        Have a play, heres a bunch of experiments and doohickeys.
+    <header class="arrow"></header/>    
+        <!-- Have a play, heres a bunch of experiments and doohickeys. -->
         <article class="item clearfix" ng-repeat="tinker in tinkers | is_set : 'featured' | orderBy : 'featured' | limitTo : 3">
             <div class="resources" ng-repeat="resource in tinker.resources">
                 <img ng-src="{{resource.url}}" />
