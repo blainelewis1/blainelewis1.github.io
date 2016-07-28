@@ -1,10 +1,17 @@
 /*csslint ids:false*/
 
+body {
+    color: #1a1a1a;
+    font-family: Helvetica, Arial, sans-serif;
+    margin:auto;
+    word-wrap: break-word;
+}
+
 a {
     text-decoration: none;
 }
 
-a, a:visited {
+a, a:visited, header {
     color : #E8E830;
 }
 
@@ -23,7 +30,8 @@ section header {
 /** INTRO **/
 
 #intro {
-    background-color: #a0a0a0;
+    /*background-color: #a0a0a0;*/
+    background-color: #1F1F1F;
 
     text-align: center;
     font-size: 1.5vh;
@@ -34,14 +42,17 @@ section header {
     flex-direction: column;
     justify-content: center;
 }
+#about-me {
+    background-color: #1F1F1F;
+}
 
-#intro p {
+
+#intro p, #about-me p {
     color: #555555;
 }
 
 #intro header {
     font-size: 7em;                /* 7 * 1.5 =  10.5 */
-    color:#222222;
 }
 
 #social img {
@@ -78,10 +89,12 @@ section header {
 }
 
 #blurb {
-    /* TODO: this width could be weird...   */
     margin: auto;
 }
 
+#tinkers {
+    background-color: #404040;
+}
 
 #picture img {
     max-height: 25vh;                           /* 25 */
@@ -136,36 +149,9 @@ section header {
 
 }
 
-/** EXPERIENCE **/
-#experience {
-    background-color: #90EE90;
-}
-
-#experience article .text {
-    float: right;
-}
-
-#experience article .resources {
-    float: left;
-}
-
-/** PLAY **/
-
-#play {
-    background-color: #FFB347;
-}
-#play article .text {
-    float: left;
-}
-#play article .resources {
-    float: right;
-}
-
 /** ABOUT-ME **/
 
-#about-me {
-    background-color: #CFCFC4;
-}
+
 
 
 /** GLOBAL **/
@@ -174,21 +160,8 @@ img {
   max-width: 100%;
 }
 
-@font-face {
-    font-family: HelveticaBold;
-    src: url('/assets/fonts/Helvetica-Bold.otf?') format("opentype");
-}
-
 * {
     box-sizing: border-box;
-}
-
-body {
-  font-family: Helvetica, sans-serif;
-  color: #222222;
-
-  margin:auto;
-  word-wrap: break-word;
 }
 
 article {
@@ -255,7 +228,6 @@ input:not([type=submit]):not([type=file]):not([type=button]) {
 
 .up:after, .up:before  {
   content:"\25B2";
-
 }
 
 .down:after, .down:before {

@@ -9,8 +9,6 @@ var blainelewis = angular.module('BlaineLewis', [])
         var to_return = [];
 
         for(var i = 0; i < arr.length; i++){
-
-
             if(arr[i][prop] !== undefined) {
                 to_return.push(arr[i]);
             }
