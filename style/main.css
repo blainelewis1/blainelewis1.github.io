@@ -193,6 +193,7 @@ article .resources {
 #about-me {
     background-color: #1F1F1F;
     min-height:100vh;
+    display: inline-block;
 }
 
 #about-me #picture {
