@@ -1,6 +1,7 @@
 /*csslint ids:false*/
 /*csslint box-model:false*/
 
+
 html {
     overflow-y:scroll;
 }
@@ -101,11 +102,16 @@ section header {
 }
 
 #tinkers {
-    background-color: #404040;
-    background-color: #666666;
-    background-image: url('/images/backgrounds/footer_lodyas.png');    
+    /* Background pattern from subtlepatterns.com */
+    /* I changed the brightness to fix some contrast issues */
+    background-color: #5a5a5a;
+    background-image: url('/images/backgrounds/footer_lodyas.png');
     background-repeat: repeat;
     background-size: auto;
+}
+
+#tinkers article {
+    width:100%;
 }
 
 article:first-of-type {
@@ -118,7 +124,7 @@ article:last-of-type {
 
 article {
     clear: both;
-    margin: 0 5vw 5vh 5vw;
+    margin: 0 5vw 0 5vw;
     text-align: left;
 }
 
@@ -173,8 +179,14 @@ article .resources {
         width:100%;
         float:none;
     }
+
     article .text {
-        margin-top:3vh;
+        margin-bottom: 3vh;
+    }
+
+    article {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -193,7 +205,6 @@ article .resources {
     width:69%;
 }
 
-
 /** GLOBAL **/
 
 article {
@@ -201,15 +212,16 @@ article {
 }
 
 .seperator {
+    width:30%;
+    height:2vh;
 
-  margin-bottom:7vh;
-  margin-top:7vh;
+    margin: 7vh 35% 7vh 35%;
 
-  width:20%;
-  height:5px;
-
-  background-color: #222222;
-  display:block;
+    border-radius: 2vh;
+    border-top: 2vh;
+    border-style:solid;
+    border-color: #1F1F1F;
+    clear:both;
 }
 
 /** FORMS **/
