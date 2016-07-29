@@ -2,7 +2,18 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style/main.css">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- This needs tweaking I think -->
+    <meta name="theme-color" content="#ffffff">
 
   <!-- TODO: I want to take a selfie with code in  the background but with my
   silhouette in the screen, thatll be my main image I think it'd be even cooler if
@@ -20,7 +31,8 @@
     ga('send', 'pageview');
   </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="/scripts/controllers.js"></script>
 
     <title>Blaine Lewis</title>
@@ -39,7 +51,8 @@
 
     <section id="tinkers">
     <header class="arrow">Tinkers</header/>
-        <!-- Have a play, heres a bunch of experiments and doohickeys. -->
+        <!-- TODO: some form of subtle background to smooth things out -->
+
         <article class="item clearfix" ng-repeat="tinker in tinkers | is_set : 'featured' | orderBy : 'featured' | limitTo : 3">
             <div class="resources" ng-repeat="resource in tinker.resources">
                 <img ng-src="{{resource.url}}" />
@@ -65,9 +78,12 @@
         <article class="item clearfix" ng-repeat="item in seriouslytheyrenotgoals" ng-include="'/resources/templates/item.html'"></article>
     </section> -->
 
+    <!-- TODO: Seperator between tinkers -->
+
     <section id="about-me">
         <header class="arrow">About me</header>
         <!-- TODO: picture of me here, sits on left side unless mobile in which case it goes below about me and above the blurb-->
+        <!-- TODO: contact me -->
         <article>
           <p>
             I'm a twenty something who's just finishing up a degree specialising in computer sciences. I'm from Edmonton, Canada but I've lived in a few places. Mountains are kind of my thing.
@@ -80,10 +96,6 @@
               <span id="instagram"><a target="_blank" href="https://instagram.com/blaine.lewis.1"><img src="images/logos/instagram/glyph-logo_May2016.png"/></a></span>
           </div>
 
-          <!-- <header>Contact Me</header>
-          <p>
-            Wanna collab? Need a belayer, hiking partner, or whatever? Contact me, I'll be sure to get back at you.
-          </p> -->
         </article>
     </section>
 </body>
