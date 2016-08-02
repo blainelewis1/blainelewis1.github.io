@@ -2,6 +2,12 @@
 /*csslint box-model:false*/
 
 
+/*
+    TODO: tweak breakpoints so that resume is last line, theres always two lines for each
+    then do the same for the other breakppints
+    make sure my name is always on one line.
+*/
+
 html {
     overflow-y:scroll;
 }
@@ -91,7 +97,13 @@ section header {
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
+    #blurb p {
+        max-width:50vw;
+    }
+}
+
+@media (min-width: 1300px) {
     #blurb p {
         max-width:30vw;
     }
