@@ -1,6 +1,6 @@
 <html ng-strict-di ng-app="BlaineLewis">
     <head>
-    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" type="text/css" href="style/main.css"> -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,6 +22,7 @@
       ga('create', 'UA-80660221-1', 'auto');
       ga('send', 'pageview');
     </script>
+
     <style>/*csslint ids:false*/
     /*csslint box-model:false*/
 
@@ -31,6 +32,10 @@
         then do the same for the other breakppints
         make sure my name is always on one line.
     */
+
+    .wf-loading, .wf-inactive {
+        font-family: serif;
+    }
 
     html {
         overflow-y:scroll;
@@ -46,7 +51,7 @@
 
     body {
         color: #1a1a1a;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: Helvetica, Arial, serif;
         margin:auto;
         word-wrap: break-word;
     }
@@ -120,7 +125,7 @@
 
     #intro header {
         font-size: 7em;
-        font-family: Rockwell, Arvo, sans-serif;
+        font-family: Arvo, sans-serif;
     }
 
     #blurb p {
@@ -407,7 +412,7 @@
     <header class="arrow">Projects</header/>
         <article class="item clearfix" ng-repeat="project in projects | is_set : 'featured' | orderBy : 'featured' | limitTo : 4">
             <div class="text">
-                <header>
+                <header class="wf-loading">
                     <a ng-href="{{project.url}}">{{project.title}}</a>
                 </header>
                 <summary>
@@ -472,6 +477,15 @@
                 $scope.projects = res.data;
             });
         }]);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Arvo'],
+          text : 'BlainLews'
+        }
+      });
     </script>
 </body>
 </html>
