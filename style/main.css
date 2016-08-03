@@ -42,6 +42,7 @@ h2 {
 section {
     padding: 40vh 10vw 12vh 10vw;
     clear: both;
+    max-width:100%;
 }
 section:last-of-type {
     padding: 40vh 10vw 5vh 10vw;
@@ -204,11 +205,14 @@ article .resources {
 #profile {
     float:left;
     width:32%;
+    max-width:32%;
+    clear:none;
 }
 
 #about-me article {
     float:right;
     width:55%;
+    max-width:55%;
     clear:none;
     margin:0;
 }
