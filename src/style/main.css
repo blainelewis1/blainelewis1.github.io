@@ -1,12 +1,13 @@
-/*csslint ids:false*/
-/*csslint box-model:false*/
-
-
 /*
     TODO: tweak breakpoints so that resume is last line, theres always two lines for each
     then do the same for the other breakppints
     make sure my name is always on one line.
 */
+
+.wf-loading #intro header, .wf-inactive #intro header {
+    font-family: serif;
+    
+}
 
 html {
     overflow-y:scroll;
@@ -22,7 +23,7 @@ img {
 
 body {
     color: #1a1a1a;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, serif;
     margin:auto;
     word-wrap: break-word;
 }
@@ -96,7 +97,7 @@ section header {
 
 #intro header {
     font-size: 7em;
-    font-family: Rockwell, Arvo, sans-serif;
+    font-family: Arvo, sans-serif;
 }
 
 #blurb p {
