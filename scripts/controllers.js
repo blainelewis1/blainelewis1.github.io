@@ -18,7 +18,6 @@ var blainelewis = angular.module('BlaineLewis', [])
     };
 }])
 .controller('Controller', ["$scope", "$http", function ($scope, $http) {
-    $scope.seriouslytheyrenotgoals = [];
     $scope.projects = [];
 
     $http.get('/assets/resources/projects.json')

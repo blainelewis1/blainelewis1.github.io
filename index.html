@@ -28,6 +28,7 @@
 
     <!-- TODO: SEO. -->
     <!-- TODO: My favicon is mediocre... -->
+    <!-- TODO: Add fallbacks for angular and other cdns -->
 
     <title>Blaine Lewis</title>
 </head>
@@ -43,7 +44,7 @@
     </section>
     <section id="projects">
     <header class="arrow">Projects</header/>
-        <article class="item clearfix" ng-repeat="project in projects | is_set : 'featured' | orderBy : 'featured' | limitTo : 3">
+        <article class="item clearfix" ng-repeat="project in projects | is_set : 'featured' | orderBy : 'featured' | limitTo : 4">
             <div class="text">
                 <header>
                     <a ng-href="{{project.url}}">{{project.title}}</a>
