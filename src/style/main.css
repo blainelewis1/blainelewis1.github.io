@@ -4,11 +4,6 @@
     make sure my name is always on one line.
 */
 
-.wf-loading #intro header, .wf-inactive #intro header {
-    font-family: serif;
-    
-}
-
 html {
     overflow-y:scroll;
 }
