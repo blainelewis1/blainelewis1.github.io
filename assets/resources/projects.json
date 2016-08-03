@@ -1,6 +1,6 @@
 [{
     "title": "Blockster",
-    "url": "/tinkers/blockster",
+    "url": "/projects/blockster",
     "featured" : 0,
     "resources": [{
         "type": "image",
@@ -10,7 +10,7 @@
     "technologies": ["Javascript"]
 }, {
     "title": "Algomations",
-    "url": "/tinkers/algomations",
+    "url": "/projects/algomations",
     "resources": [{
         "type": "image",
         "url": "images/projects/algomations.png"
@@ -20,7 +20,7 @@
 }, {
     "title": "Balance",
     "featured" : 1,
-    "url": "/tinkers/balance",
+    "url": "/projects/balance",
     "resources": [{
         "type": "image",
         "url": "images/projects/balance.png"
@@ -30,7 +30,7 @@
 }, {
     "title": "Schools",
     "featured" : 2,
-    "url": "/tinkers/schools",
+    "url": "/projects/schools",
     "resources": [{
         "type": "image",
         "url": "images/projects/schools.png"
