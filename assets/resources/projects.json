@@ -4,7 +4,7 @@
     "featured" : 0,
     "resources": [{
         "type": "image",
-        "url": "images/blockster.png"
+        "url": "images/projects/blockster.png"
     }],
     "summary": "A friend and I were bored during a night off at an undergraduate research conference (UROC) and decided we should try making a game.",
     "technologies": ["Javascript"]
@@ -13,7 +13,7 @@
     "url": "/tinkers/algomations",
     "resources": [{
         "type": "image",
-        "url": "images/algomations.png"
+        "url": "images/projects/algomations.png"
     }],
     "summary": "I absolutely love math and algorithms but nothing rivals combining that with making them look nice. And so I make algomations where I learn a new algorithm (usually math related) and create an animation to show it!",
     "technologies": ["Javascript", "Math", "CSS"]
@@ -23,7 +23,7 @@
     "url": "/tinkers/balance",
     "resources": [{
         "type": "image",
-        "url": "images/balance.png"
+        "url": "images/projects/balance.png"
     }],
     "summary": "Neat little game you try to balance a stick on a cart.",
     "technologies": ["Javascript", "Math", "CSS", "Physics"]
@@ -33,7 +33,7 @@
     "url": "/tinkers/schools",
     "resources": [{
         "type": "image",
-        "url": "images/schools.png"
+        "url": "images/projects/schools.png"
     }],
     "summary": "Just a fun pathfinding experiment. The overall goal is to create a deluanuy triangulation and have the user place blocks and obstacles. The \"fish\" or school will then pathfind as a group towards it, going around all obstacles.",
     "technologies": ["Javascript", "Math", "Geometry"]
@@ -44,7 +44,7 @@
     "url": "blainelewis1.github.io",
     "resources": [{
         "type": "image",
-        "url": "images/schools.png"
+        "url": "images/projects/schools.png"
     }],
     "summary": "I built this in an attempt to learn responsive design without using a framework, and also learn how to use angular. ",
     "technologies": ["Javascript", "angular.js", "jQuery", "CSS"]

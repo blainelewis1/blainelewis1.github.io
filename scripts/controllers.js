@@ -19,10 +19,10 @@ var blainelewis = angular.module('BlaineLewis', [])
 }])
 .controller('Controller', ["$scope", "$http", function ($scope, $http) {
     $scope.seriouslytheyrenotgoals = [];
-    $scope.tinkers = [];
+    $scope.projects = [];
 
-    $http.get('/assets/resources/tinkers.json')
+    $http.get('/assets/resources/projects.json')
      .then(function(res){
-        $scope.tinkers = res.data;
+        $scope.projects = res.data;
       });
 }]);

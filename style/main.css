@@ -40,11 +40,38 @@ h2 {
 }
 
 section {
-    padding: 10vh 10vw 10vh 10vw;
+    padding: 40vh 10vw 12vh 10vw;
     clear: both;
+}
+section:last-of-type {
+    padding: 40vh 10vw 5vh 10vw;
 }
 section header {
     font-size: 3em;
+}
+
+.arrow {
+    /*TODO: padding*/
+    padding: 1vh;
+
+    position: absolute;
+    margin: -50vh auto;
+    right: 0;
+    width: 30vh;
+    height:45vh;
+    left: 0;
+    background-image: url('/images/transition.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    vertical-align: middle;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /** INTRO **/
@@ -70,15 +97,6 @@ section header {
 #intro header {
     font-size: 7em;
     font-family: Rockwell, Arvo;
-}
-
-#social img {
-    height:4vh;
-    padding-right: 1%;
-}
-
-#social {
-    margin-top: 3vh;
 }
 
 #blurb > * {
@@ -113,7 +131,7 @@ section header {
     margin: auto;
 }
 
-#tinkers {
+#projects {
     /* Background pattern from subtlepatterns.com */
     /* I changed the brightness to fix some contrast issues */
     background-color: #5a5a5a;
@@ -122,16 +140,8 @@ section header {
     background-size: auto;
 }
 
-#tinkers article {
+#projects article {
     width:100%;
-}
-
-article:first-of-type {
-    margin-top:32vh;
-}
-
-article:last-of-type {
-    margin-bottom:15vh;
 }
 
 article {
@@ -145,31 +155,6 @@ article header {
     font-size: 2em;
 }
 
-.arrow {
-    /*TODO: padding*/
-    padding: 1vh;
-
-    position: absolute;
-    margin: -20vh auto;
-    right: 0;
-    width: 30vh;
-    height:45vh;
-    left: 0;
-    background-image: url('/images/transition.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
-    vertical-align: middle;
-
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
 article .text, article .resources {
     width: 48%;
     display: inline-block;
@@ -181,7 +166,7 @@ article .resources {
     float: right;
 }
 
-#tinkers img {
+#projects img {
     border-radius: 1em;
 }
 
@@ -202,20 +187,56 @@ article .resources {
     }
 }
 
+.note {
+    font-size:0.75em;
+}
+
 #about-me {
     background-color: #1F1F1F;
     min-height:100vh;
     display: inline-block;
 }
 
-#about-me #picture {
-    width:29%;
+#about-me p:first-of-type {
+    margin-top:0;
+}
+
+#profile {
     float:left;
+    width:32%;
 }
 
 #about-me article {
     float:right;
-    width:69%;
+    width:55%;
+    clear:none;
+    margin:0;
+}
+
+#social img {
+    height:4vh;
+}
+
+#social a {
+    padding-right: 2vh;
+}
+
+#social a:last-of-type {
+    padding-right: 0;
+}
+
+#social {
+    margin: 3vh auto;
+    margin-top: 3vh;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    #about-me article, #profile {
+        max-width:100%;
+        width:100%;
+        float:none;
+    }
 }
 
 /** GLOBAL **/
