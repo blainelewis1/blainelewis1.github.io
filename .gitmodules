@@ -2,20 +2,20 @@
 	path = resume
 	url = https://github.com/blainelewis1/Resume
 [submodule "projects/EarthquakeVisualizer"]
-	path = tinkers/earthquakes
+	path = projects/earthquakes
 	url = https://github.com/blainelewis1/EarthquakeVisualizer.git
 [submodule "projects/Blockster"]
-	path = tinkers/blockster
+	path = projects/blockster
 	url = https://github.com/mfritze/Blockster.git
 [submodule "projects/Algomations"]
-	path = tinkers/algomations
+	path = projects/algomations
 	url = https://github.com/blainelewis1/Algomations.git
 [submodule "projects/Balance"]
-	path = tinkers/balance
+	path = projects/balance
 	url = https://github.com/blainelewis1/Balance
 [submodule "projects/Schools"]
-	path = tinkers/schools
+	path = projects/schools
 	url = https://github.com/blainelewis1/Schools
 [submodule "projects/Pongin"]
-	path = tinkers/brickitybreaker
+	path = projects/brickitybreaker
 	url = https://github.com/blainelewis1/BrickityBreaker
