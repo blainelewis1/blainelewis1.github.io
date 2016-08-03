@@ -26,6 +26,86 @@
       ga('send', 'pageview');
     </script>
 
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        color: #1a1a1a;
+        font-family: Helvetica, Arial, sans-serif;
+        margin:auto;
+        word-wrap: break-word;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a, a:visited, header {
+        color : #E8E830;
+    }
+
+    section {
+        padding: 40vh 10vw 12vh 10vw;
+        clear: both;
+        max-width:100%;
+    }
+    section header {
+        font-size: 3em;
+    }
+
+    #intro {
+        background-color: #1F1F1F;
+
+        text-align: center;
+        font-size: 1.5vh;
+        padding: 10vh 5vw 8vh 5vw;               /* 20 */
+        height:100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #intro p, #about-me p {
+        color: #666666;
+    }
+
+    #intro header {
+        font-size: 7em;
+        font-family: Rockwell, Arvo;
+    }
+
+    #blurb p {
+        font-size: 2em;
+        margin: auto;
+        margin-top: 2vh;
+    }
+
+    @media (min-width: 500px) {
+        #blurb p {
+            max-width:70vw;
+        }
+    }
+
+    @media (min-width: 900px) {
+        #blurb p {
+            max-width:50vw;
+        }
+    }
+
+    @media (min-width: 1300px) {
+        #blurb p {
+            max-width:30vw;
+        }
+    }
+
+    #blurb {
+        margin: auto;
+    }
+    </style>
+
     <!-- TODO: SEO. -->
     <!-- TODO: My favicon is mediocre... -->
     <!-- TODO: Add fallbacks for angular and other cdns -->

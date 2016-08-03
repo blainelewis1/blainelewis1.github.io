@@ -78,7 +78,6 @@ section header {
 /** INTRO **/
 
 #intro {
-    /*background-color: #a0a0a0;*/
     background-color: #1F1F1F;
 
     text-align: center;
@@ -98,10 +97,6 @@ section header {
 #intro header {
     font-size: 7em;
     font-family: Rockwell, Arvo;
-}
-
-#blurb > * {
-    margin-top: 2vh;
 }
 
 #blurb p {
@@ -341,14 +336,6 @@ html[xmlns] .clearfix {
 
 .technologies li {
     display: inline-block;
-    /*background-color: #779ECB;*/
-
-    /*border-radius: 0.5em;
-    border-width:1px;
-    border-style:solid;
-    border-color:black;
-
-    /*padding: 1vh 1vw 1vh 1vw;*/
     padding: 0.5vh 0.5vw 0.5vh 0.5vw;
     margin-right:0.5vw;
 }
