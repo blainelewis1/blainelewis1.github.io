@@ -96,7 +96,7 @@ section header {
 
 #intro header {
     font-size: 7em;
-    font-family: Rockwell, Arvo;
+    font-family: Rockwell, Arvo, sans-serif;
 }
 
 #blurb p {
