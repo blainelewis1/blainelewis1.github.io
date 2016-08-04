@@ -8,7 +8,6 @@
 
     <meta name="theme-color" content="#1F1F1F">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="msvalidate.01" content="AACA82F01EE2652793981F0B5E7A2F01" />
     <meta name="description" content="Blaine Lewis is a developer, product manager and researcher. This is his personal website hosting some of his creations." />
     <meta name="robots" content="index,follow" />
     <meta name="keywords" content="algomations, blaine, lewis, blaine lewis, blainelewis1, blockster, balance, developer, product, manager, product manager, tinkerer, researcher, consultant, contractor" />
@@ -28,7 +27,6 @@
     <!-- TODO: maybe make images scale a bit better -->
     <!-- TODO: favicons to src folder -->
     <!-- TODO: clean gulp rule? -->
-    <!-- TODO: remove header and replace with h1, h2 etc. -->
     <!-- pass this http://wave.webaim.org/report#/blainelew.is -->
     <title>Blaine Lewis</title>
 </head>
@@ -45,7 +43,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo&text=Blaine%20Lewis" />
 
     <section id="projects">
-    <header class="arrow"><h2>Projects<h2></header>
+    <header class="arrow"><h2>Projects</h2></header>
         <article class="item clearfix" ng-repeat="project in projects | is_set : 'featured' | orderBy : 'featured' | limitTo : 4">
             <div class="text">
                 <header>
@@ -56,7 +54,7 @@
                 </summary>
             </div>
             <div class="resources" ng-repeat="resource in project.resources">
-                <img alt="{resource.alt}" ng-src="{{resource.url}}" />
+                <img alt="{{resource.alt}}" ng-src="{{resource.url}}" />
             </div>
             <div style="clear:both"></div><div ng-class="{'seperator' : !$last}" />
         </article>
@@ -84,17 +82,6 @@
                 </p>
             </article>
     </section>
-
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-    <script>
-      WebFont.load({
-        google: {
-          families: ['Arvo'],
-          text : 'BlainLews'
-        }
-      });
-    </script> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="scripts/controller.js"></script>
