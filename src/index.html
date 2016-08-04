@@ -1,4 +1,4 @@
-<html ng-strict-di ng-app="BlaineLewis">
+<html ng-strict-di ng-app="BlaineLewis" lang="en">
     <head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -8,6 +8,10 @@
 
     <meta name="theme-color" content="#1F1F1F">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="AACA82F01EE2652793981F0B5E7A2F01" />
+    <meta name="description" content="Blaine Lewis is a developer, product manager and researcher. This is his personal website hosting some of his creations." />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="algomations, blaine, lewis, blaine lewis, blainelewis1, blockster, balance, developer, product, manager, product manager, tinkerer, researcher, consultant, contractor" />
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -22,6 +26,11 @@
     <!-- TODO: SEO. -->
     <!-- TODO: My favicon is mediocre... -->
     <!-- TODO: maybe make images scale a bit better -->
+    <!-- TODO: favicons to src folder -->
+    <!-- TODO: clean gulp rule? -->
+    <!-- TODO: remove header and replace with h1, h2 etc. -->
+    <!-- TODO: alt text for images, meta data, page language -->
+    <!-- pass this http://wave.webaim.org/report#/blainelew.is -->
     <title>Blaine Lewis</title>
 </head>
 <body ng-controller="Controller">
@@ -49,7 +58,7 @@
                 </summary>
             </div>
             <div class="resources" ng-repeat="resource in project.resources">
-                <img ng-src="{{resource.url}}" />
+                <img alt="{resource.alt}" ng-src="{{resource.url}}" />
             </div>
             <div style="clear:both"></div><div ng-class="{'seperator' : !$last}" />
         </article>
@@ -58,11 +67,11 @@
     <section id="about-me" class="clearfix">
         <header class="arrow">About me</header>
             <div id="profile">
-                <img src="/images/profile.png"/>
+                <img alt="Profile picture of Blaine" src="/images/profile.png"/>
                 <div id="social">
-                  <a href="https://github.com/blainelewis1"><img src="images/logos/github/GitHub-Mark-Light-32px.png" /></a>
-                  <a href="https://ca.linkedin.com/in/blainelewis1"><img src="images/logos/linkedin/In-White-34px-TM.png"/></a>
-                  <a href="https://instagram.com/blaine.lewis.1"><img src="images/logos/instagram/glyph-logo_May2016.png"/></a>
+                  <a href="https://github.com/blainelewis1"><img alt="Github" src="images/logos/github/GitHub-Mark-Light-32px.png" /></a>
+                  <a href="https://ca.linkedin.com/in/blainelewis1"><img alt="LinkedIn" src="images/logos/linkedin/In-White-34px-TM.png"/></a>
+                  <a href="https://www.instagram.com/blaine.lewis.1"><img alt="Instagram" src="images/logos/instagram/glyph-logo_May2016.png"/></a>
                 </div>
             </div>
             <article>

@@ -7,17 +7,6 @@ var cleanCss = require('gulp-clean-css');
 var jsonMinify = require('gulp-json-minify');
 var htmlmin = require('gulp-htmlmin');
 
-//TODO: minify images, minify/inline css and JS, maybe change angular to a require include sourcemaps if at all possilbe
-//TODO: minify and move json too.
-
-//npm i gulp-htmlmin --save-dev
-//npm install --save-dev gulp-minify-inline
-//npm install gulp-inline
-
-// gulp.src('src/favicon/*')
-//     .pipe(imagemin())
-//     .pipe(gulp.dest('/'));
-
 gulp.task('default', function() {
     gulp.start('minify-html', 'minify-images', 'minify-json');
 });

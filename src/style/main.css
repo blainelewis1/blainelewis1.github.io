@@ -1,5 +1,6 @@
 /*
-    TODO: tweak breakpoints so that resume is last line, theres always two lines for each
+    TODO: tweak breakpoints so that resume is last line,
+    theres always two lines for each
     then do the same for the other breakppints
     make sure my name is always on one line.
 */
@@ -29,10 +30,6 @@ a {
 
 a, a:visited, header {
     color : #E8E830;
-}
-
-h2 {
-    font-size: 4em;
 }
 
 section {
@@ -99,6 +96,12 @@ section header {
     font-size: 2em;
     margin: auto;
     margin-top: 2vh;
+}
+
+@media (min-width: 400px) {
+    #blurb p {
+        max-width:75vw;
+    }
 }
 
 @media (min-width: 500px) {
@@ -177,10 +180,6 @@ article .resources {
         margin-left: 0;
         margin-right: 0;
     }
-}
-
-.note {
-    font-size:0.75em;
 }
 
 #about-me {

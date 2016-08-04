@@ -4,6 +4,7 @@
     "featured" : 0,
     "resources": [{
         "type": "image",
+        "alt" : "Playing Blockster.",
         "url": "images/projects/blockster.png"
     }],
     "summary": "A friend and I were bored during a night off at an undergraduate research conference (UROC) and decided we should try making a game. It's written using pure Javascript with the HTML5 canvas.",
@@ -14,6 +15,7 @@
     "url" : "/projects/algomations",
     "resources": [{
         "type": "image",
+        "alt" : "Algomation of standard normal distribution.",
         "url": "images/projects/algomations.png"
     }],
     "summary": "I absolutely love math and algorithms. I've got an equal interest in visualising data. Algomations are a combination of my interests where I learn a new algorithm (usually math related) and create an animation to show it!",
@@ -24,6 +26,7 @@
     "url": "/projects/balance",
     "resources": [{
         "type": "image",
+        "alt" : "Playing the balance game.",
         "url": "images/projects/balance.png"
     }],
     "summary": "Currently this is a prototype with semi realistic physics where you attempt to balance a stick on a cart. I intend to enhance it into a mobile browser game.",
@@ -34,6 +37,7 @@
     "url": "/projects/schools",
     "resources": [{
         "type": "image",
+        "alt" : "Half built picture of the schools project pathfinding.",
         "url": "images/projects/schools.png"
     }],
     "summary": "This is an experiment with pathfinding. The end goal is to be able to dynamically place obstacles and generate a delaunay triangulation that can be used for pathfinding. The \"fish\" or school will then pathfind as a group using a combination of A* and the triangulation. Once they can successfully pathfind I intend to experiment with various group dynamics.",
