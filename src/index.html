@@ -29,29 +29,27 @@
     <!-- TODO: favicons to src folder -->
     <!-- TODO: clean gulp rule? -->
     <!-- TODO: remove header and replace with h1, h2 etc. -->
-    <!-- TODO: alt text for images, meta data, page language -->
     <!-- pass this http://wave.webaim.org/report#/blainelew.is -->
     <title>Blaine Lewis</title>
 </head>
 <body ng-controller="Controller">
     <section id="intro">
     <div>
-        <header>Blaine Lewis</header>
+        <header><h1>Blaine Lewis</h1></header>
         <div id="blurb">
             <p>Developer of all sorts. Researcher.<br />Product manager. Tinkerer.</p>
             <p>This is a page all about me and the things I've built. If you're interested check out my <!--<a href="/portfolio">portfolio</a> or --><a href="/resume">resume</a>.</p>
         </div>
     </div>
     </section>
-
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo&text=Blaine%20Lewis" />
 
     <section id="projects">
-    <header class="arrow">Projects</header>
+    <header class="arrow"><h2>Projects<h2></header>
         <article class="item clearfix" ng-repeat="project in projects | is_set : 'featured' | orderBy : 'featured' | limitTo : 4">
             <div class="text">
-                <header class="wf-loading">
-                    <a ng-href="{{project.url}}">{{project.title}}</a>
+                <header>
+                    <h3><a ng-href="{{project.url}}">{{project.title}}</a></h3>
                 </header>
                 <summary>
                     {{project.summary}}
@@ -65,7 +63,7 @@
     </section>
 
     <section id="about-me" class="clearfix">
-        <header class="arrow">About me</header>
+        <header class="arrow"><h2>About me</h2></header>
             <div id="profile">
                 <img alt="Profile picture of Blaine" src="/images/profile.png"/>
                 <div id="social">
