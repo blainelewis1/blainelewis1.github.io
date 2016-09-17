@@ -1,0 +1,12 @@
+{
+    "globals" : {
+        "require": false,
+        "module": false,
+        "QUnit": false,
+        "console": false,
+        "CONFIG": false
+    },
+
+    "strict" : true,
+    "-W097" : true
+}
