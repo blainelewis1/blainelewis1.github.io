@@ -153,7 +153,7 @@ section:last-of-type {
 
 article {
     clear: both;
-    margin: 0 5vw 0 5vw;
+    margin: auto;
     text-align: left;
 }
 
@@ -252,10 +252,10 @@ article {
 
     margin: 7vh 35% 7vh 35%;
 
-    border-radius: 2vh;
+    /*border-radius: 2vh;
     border-top: 2vh;
     border-style:solid;
-    border-color: #1F1F1F;
+    border-color: #1F1F1F;*/
     clear:both;
 }
 
