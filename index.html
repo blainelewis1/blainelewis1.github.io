@@ -1,77 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+https://dribbble.com/colors/e8b730?percent=30
+https://dribbble.com/shots/4237457-Transform-devices
+
+
+
+https://dribbble.com/shots/4238787-Wolf-Pack
+https://dribbble.com/colors/0598CC
+https://dribbble.com/colors/F4B220
+https://dribbble.com/colors/48505D
+
+
+
+palette: 
+
+main
+F4B220
+
+accent
+0598CC
+
+dark grey
+#544d3f
+
+light grey
+f9f3e4
+
+
+-->
+
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Blaine Lewis</title>
-      <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
-      <style>
-            * {
-                  box-sizing: border-box;
-                  margin: 0;
-                  padding: 0;
-            }
-            html, body {
-                  line-height: 1.5;
-            }
-            h1 { 
-                  font-family: 'Cousine', monospace;
-            }
-            /* * + * {
-                  margin-top: 1.5em;
-            }
-             */
-            nav {
-                  width:100%;
-            }
-
-            nav ul {
-                  display: flex;
-                  flex-wrap: nowrap;
-                  justify-content: flex-end;
-                  align-items: baseline;
-            }
-
-            nav li {
-                  display: block;
-                  padding: 1em;
-            }
-
-            a {
-                  text-decoration: none;
-            }
-      </style>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Cousine" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
       <header>
             <nav>
                   <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Research</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#"><h1>Blaine Lewis</h1></a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">research</a></li>
+                        <li><a href="#">projects</a></li>
+                        <li><a href="#">blog</a></li>
                   </ul>            
             </nav>
-            <h1>Blaine Lewis</h1>
       </header>
-      <section id="about">
-            <h2>About Me</h2>
-            <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat ipsum efficitur, iaculis sapien quis, pretium nulla. Sed id ipsum molestie, vehicula mauris ut, suscipit arcu. Nulla sollicitudin, arcu et consequat pellentesque, metus magna ultricies dolor, a pretium ex sem mattis nibh. Duis at diam id magna egestas fermentum suscipit a tortor. Duis rhoncus elit congue faucibus efficitur. Duis sed nisi ut massa bibendum ornare. Sed viverra arcu massa, at aliquet nulla convallis eu. Etiam vel fringilla ipsum. Nam efficitur auctor mauris, a lacinia libero faucibus ac. Mauris non porttitor nibh, ac suscipit nulla. Etiam et ultrices arcu, ac maximus diam. Mauris vitae viverra odio, hendrerit tincidunt lacus. Nullam ac vestibulum nulla, nec dictum ante. Aenean mi ex, lobortis ac sapien et, pretium laoreet tellus. Curabitur condimentum purus pretium, faucibus felis et, tristique diam. Maecenas leo velit, vestibulum sed luctus egestas, posuere non nunc.
+      
+      <!-- <div id="art">
+            <canvas></canvas>
+            <script src="art.js"></script>
+          
+            <script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='waterloo, on')&format=json&callback=weatherCallback"></script>                      
+      </div> -->
+      <div id="pic">
+            <script src="art.js"></script>
+            <script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='waterloo, on')&format=json&callback=weatherCallback"></script> 
+      </div>
 
-                  Proin tempor tortor sit amet tincidunt aliquet. Praesent at nulla mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean non tellus libero. Ut at ultricies neque. Ut ac purus dapibus, mollis dolor quis, volutpat velit. Integer non efficitur nulla. Maecenas et mi consequat, mollis lectus a, maximus felis. Phasellus placerat mauris luctus vehicula cursus. Morbi blandit ultricies nisi, et convallis dolor aliquam in.
-            </p>
-      </section>
-      <section id="research">
+      <main>
+            <section id="about">
+                  <h2>About Me</h2>
+                  <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat ipsum efficitur, iaculis sapien quis, pretium nulla. Sed id ipsum molestie, vehicula mauris ut, suscipit arcu. Nulla sollicitudin, arcu et consequat pellentesque, metus magna ultricies dolor, a pretium ex sem mattis nibh. Duis at diam id magna egestas fermentum suscipit a tortor. Duis rhoncus elit congue faucibus efficitur. Duis sed nisi ut massa bibendum ornare. Sed viverra arcu massa, at aliquet nulla convallis eu. Etiam vel fringilla ipsum. Nam efficitur auctor mauris, a lacinia libero faucibus ac. Mauris non porttitor nibh, ac suscipit nulla. Etiam et ultrices arcu, ac maximus diam. Mauris vitae viverra odio, hendrerit tincidunt lacus. Nullam ac vestibulum nulla, nec dictum ante. Aenean mi ex, lobortis ac sapien et, pretium laoreet tellus. Curabitur condimentum purus pretium, faucibus felis et, tristique diam. Maecenas leo velit, vestibulum sed luctus egestas, posuere non nunc.
 
-      </section>
+                        Proin tempor tortor sit amet tincidunt aliquet. Praesent at nulla mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean non tellus libero. Ut at ultricies neque. Ut ac purus dapibus, mollis dolor quis, volutpat velit. Integer non efficitur nulla. Maecenas et mi consequat, mollis lectus a, maximus felis. Phasellus placerat mauris luctus vehicula cursus. Morbi blandit ultricies nisi, et convallis dolor aliquam in.
+                  </p>
+            </section>
+            <section id="research">
+                  <h2>Research</h2>
+                  <p>
+                        
+                  </p>
+            </section>
 
-      <section id="Projects">
-            
-      </section>
-      <section id="Blog">
-            
-      </section>
+            <section id="projects">
+                  <h2>Projects</h2>
+
+            </section>
+            <section id="blog">
+                  <h2>Blog</h2>
+                  <article>
+                        <h3>How to Money</h3>
+                        <p>
+                              Lorem ipsum
+                        </p>
+                        <footer>
+                              <p>Read more, 1000 comments</p>
+                        </footer>
+                  </article>
+            </section>
+      </main>
+      <footer>
+
+      </footer>
 </body>
 </html>
