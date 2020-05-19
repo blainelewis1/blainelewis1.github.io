@@ -103,3 +103,18 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   ]
   createTypes(typeDefs)
 }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /@blainelewis1\/keymap/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
