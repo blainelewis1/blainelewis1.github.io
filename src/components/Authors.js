@@ -20,11 +20,8 @@ const Authors = ({ authors }) => {
     {}
   )
 
-  console.log(authorData)
-
   let Author = ({ author }) => {
     let authorText = author
-    console.log(author)
 
     if (author.toLowerCase() === "blaine lewis") {
       authorText = <i>{author}</i>
