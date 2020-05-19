@@ -4,10 +4,14 @@ import { MDXProvider } from "@mdx-js/react"
 import "../styles/basic-post.css"
 import Reference from "../components/Reference"
 import { find } from "lodash"
-
+import PaperLinks from "../components/PaperLinks"
 import { graphql, useStaticQuery } from "gatsby"
 import CopyOnClick from "../components/CopyOnClick"
+import { Helmet } from "react-helmet"
 
+// TODO: adding an outline to this page would be cool
+
+// TODO: this creates invalid markup
 const Figure = ({ data, caption }) => {
   return (
     <figure>
@@ -79,10 +83,19 @@ let ImageList = ({ images }) => {
 
 let shortcodes = { Cite, Figure, ImageList }
 
-// TODO: add link to pdf.
+// export const pageQuery = graphql`
+//   query MdxBlogPost($id: String) {
+//     mdx(id: { eq: $id }) {
+//       id
+//     }
+
+//   }
+// `
+
+// TODO: add link to pdf, and videos, and etc.
 
 export default ({ children, pageContext, ...props }) => {
-  let bibs = useStaticQuery(graphql`
+  let data = useStaticQuery(graphql`
     query AllBibsForPub {
       allBib {
         nodes {
@@ -90,17 +103,48 @@ export default ({ children, pageContext, ...props }) => {
           content
         }
       }
+      allMdx {
+        nodes {
+          frontmatter {
+            pdf {
+              publicURL
+            }
+            key
+            path
+            preview
+            title
+            video
+          }
+          tableOfContents
+        }
+      }
     }
-  `).allBib.nodes
+  `)
 
-  const bib = find(bibs, { key: pageContext.frontmatter.bibKey.toLowerCase() })
+  const bib =
+    find(data.allBib.nodes, {
+      key: pageContext.frontmatter.key.toLowerCase(),
+    }) || {}
+
+  const frontmatter = (
+    find(data.allMdx.nodes, {
+      frontmatter: { title: pageContext.frontmatter.title },
+    }) || { frontmatter: {} }
+  ).frontmatter
 
   return (
     <MDXProvider components={{ ...shortcodes }}>
+      <Helmet>
+        <title>{pageContext.frontmatter.title} | Blaine Lewis</title>
+      </Helmet>
       <Container>
         <h1>{pageContext.frontmatter.title}</h1>
         {children}
-        <Reference referenceKey={pageContext.frontmatter.bibKey} />
+        <h2>Links + Info</h2>
+        <PaperLinks frontmatter={frontmatter} />
+        <br />
+        <Reference referenceKey={pageContext.frontmatter.key} />
+
         <Bibtex>{bib.content}</Bibtex>
         <References />
       </Container>

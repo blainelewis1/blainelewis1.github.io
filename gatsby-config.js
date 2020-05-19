@@ -31,6 +31,7 @@ module.exports = {
       options: {
         defaultLayouts: {
           publications: require.resolve("./src/templates/publication.js"),
+          pages: require.resolve("./src/templates/publication.js"),
         },
         // extensions: [".mdx", ".md"],
         // a workaround to solve mdx-remark plugin compat issue

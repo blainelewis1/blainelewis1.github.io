@@ -4,6 +4,9 @@ key: lewis2020
 pdf: ./keymap.pdf
 video: https://www.youtube.com/watch?v=finLYNdKwI4
 preview: https://www.youtube.com/watch?v=Vtcwc9ZEMd8
+path: KeyMap
+demo: KeyMap
+thumbnail: ./keymap_thumbnail.png
 ---
 
 import retention from "./retention.svg"
@@ -12,29 +15,32 @@ import overleaf from "./overleaf_wide_colour_light_bg.svg"
 import stove from "./stove.svg"
 import Key from "../../../src/components/Key"
 import KeyMap from "@blainelewis1/KeyMap"
-import StyleController from "../../../src/components/StyleController"
+import keyMapDemoCommands from "../../../src/components/KeyMapDemoCommands"
 
 Learning keyboard shortcuts is hard and current software doesn't support learning them well. Most shortcuts are only displayed in linear menus, or ironically by pressing a keyboard shortcut like <Key>ctrl</Key> + <Key>/</Key>. Displaying keyboard shortcuts in these ways is not conduicive to remembering them because there is not a strong association between how you enter the shortcut and how you see it.
 ![Left: a linear menu with keyboard shortcuts. Right: a panel displaying the available keyboard shortcuts ](./composite-crop-tight.png)
 
-KeyMap aims to fix that. Rather than displaying keyboard shortcuts in textual form, keyboard shortcuts are displayed directly on a keyboard. You can try it right now by pressing a modifier (<Key>ctrl</Key> or <Key>command</Key>), or clicking a modifier in the bottom left of the screen.
+KeyMap aims to fix that. Rather than displaying keyboard shortcuts in textual form, keyboard shortcuts are displayed directly on a keyboard. You can try it right now by pressing a modifier (<Key>ctrl</Key> or <Key>control</Key>), or clicking a modifier in the bottom left of the screen.
 
 In KeyMap shortcuts can be spatially located. Have you ever noticed that `cut`, `copy` and `paste` are located beside each other? It's hard to notice when they are displayed in a menu, but KeyMap makes it obvious.
 
 ![A cropped image of KeyMap demonstrating spatial groupings.](./spatial.png)
 
-These ideas are not just speculative, we've demonstrated in a controlled experiment that KeyMap outperforms another state-of-the-art shortcut technique called ExposeHK <Cite referenceKey="Malacria2013" />.
-
-<Figure
-  data={stove}
-  caption={`The classic demonstration of Norman's principle of natural mapping: stove dials. The controls for the stove on the left are ambiguous, which burners are on and which are off? But the controls for the other stove are arranged in the same manner as the burners creating a natural mapping between the burners and controls.`}
-/>
-
-## Results
+These ideas are not just speculative, we've demonstrated in a controlled experiment that KeyMap outperforms another state-of-the-art shortcut technique called ExposeHK <Cite referenceKey="Malacria2013" />. Participants who used KeyMap were able to remember a median of 4.5 more commands than those who used KeyMap, a full 24 hours after the original practice session.
 
 <Figure data={retention} caption={``} />
 
-## Artifacts
+<!-- <>
+<Figure
+data={stove}
+caption={`The classic demonstration of Norman's principle of natural mapping: stove dials. The controls for the stove on the left are ambiguous, which burners are on and which are off? But the controls for the other stove are arranged in the same manner as the burners creating a natural mapping between the burners and controls.`}
+/>
+
+
+# Results
+</> -->
+
+# Artifacts
 
 Download KeyMap for Chrome, you can use it with Overleaf and the Slack app for the web. More sites will be added, and at some point you'll be able to add your own sites and shortcut mappings.
 
@@ -68,10 +74,13 @@ Interested in using KeyMap? Want to continue our research? The code for KeyMap i
 Try the experiment using either [KeyMap](http://blainelewis.ca/keymap-experiment?CONDITION=KeyMap) or [ExposeHK](http://blainelewis.ca/keymap-experiment?CONDITION=ExposeHK). The followup sessions can be accessed by appending `&SESSION=RECALL` to the URLs like this [KeyMap followup session](http://blainelewis.ca/keymap-experiment?CONDITION=KeyMap&SESSION=RECALL) The source code is available on [github](github.com/blainelewis1/keymap-experiment). If you're interested in building an experiment like it, check out [HCI Kit](hcikit.github.io)!
 
 <KeyMap
-  onCommand={command => console.log(command)}
+  onCommand={keyMapDemoCommands}
   commandHierarchy={{
-    control: { a: { command: "allll" } },
+    control: {
+      a: { command: "Say Hi!" },
+      d: { command: "Dark Mode" },
+      s: { command: "Light Mode" },
+      b: { command: "Bold" },
+    },
   }}
 />
-
-can make the above control = meta for mac and windows.

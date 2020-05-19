@@ -89,12 +89,15 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = [
     `
-      #the following three help put the linked artist node into the track node
       type Mdx implements Node {
         frontmatter: Frontmatter
       }
-      type Mdx.Frontmatter {
+      type Frontmatter implements Node {
         bib: [Bib] @link(by: "key", from: "key")
+      }
+
+      type Bib implements Node{
+        key: String
       }
       `,
   ]

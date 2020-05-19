@@ -1,8 +1,16 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import SEO from "../components/seo"
-import Reference from "../components/Reference"
+import { map, sortBy } from "lodash"
+import "../index.css"
+
+import github from "../../static/GitHub-Mark-32px.png"
+import twitter from "../../static/Twitter_Social_Icon_Circle_Color.png"
+import scholar from "../../static/scholar.png"
+import PaperLinks from "../components/PaperLinks"
+import Authors from "../components/Authors"
 
 let Content = styled.div`
   max-width: 800px;
@@ -42,10 +50,10 @@ let Header = () => {
     <HeaderContainer>
       <Nav>
         <NavItem>
-          <Link to="/artlike">artlike</Link>{" "}
+          <a href="#publications">publications</a>{" "}
         </NavItem>
         <NavItem>
-          <a href="#publications">publications</a>{" "}
+          <Link to="/artlike">artlike</Link>{" "}
         </NavItem>
       </Nav>
     </HeaderContainer>
@@ -67,54 +75,113 @@ let months = [
   "dec",
 ].reduce((obj, cur, i) => ({ ...obj, [cur]: i }), {})
 
-// only my pubs
-let test = `{
-  allFile(filter: {sourceInstanceName: {eq: "publications"}}) {
-    nodes {
-      children {
-        ... on Bib {
-          key
-          month
-          year
-        }
-      }
-    }
-  }
-}
-`
-
 export const query = graphql`
-  query {
+  query MyQuery {
     profile: file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 250) {
+        fluid(maxWidth: 400, maxHeight: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
     publications: allFile(
-      filter: {
-        sourceInstanceName: { eq: "publications" }
-        childBib: { key: { ne: null } }
-      }
+      filter: { sourceInstanceName: { eq: "publications" } }
     ) {
       nodes {
-        childBib {
-          key
-          month
-          year
+        childMdx {
+          frontmatter {
+            preview
+            video
+            path
+            demo
+
+            bib {
+              month
+              key
+              year
+              title
+              type
+              authors
+              url
+            }
+
+            pdf {
+              publicURL
+            }
+
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 150, maxHeight: 150) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 `
+
+// TODO: export to new component
+let Thumbnail = styled.div`
+  max-width: 150px;
+  width: 100%;
+`
+const PublicationContainer = styled.div`
+  display: flex;
+  margin-bottom: 50px;
+`
+
+const PublicationDescription = styled.div`
+  margin-left: 30px;
+`
+
+const PublicationTitle = styled.div`
+  font-size: 1.2em;
+`
+
+const Publication = ({ frontmatter }) => {
+  return (
+    <PublicationContainer>
+      <Thumbnail>
+        {frontmatter?.thumbnail?.childImageSharp && (
+          <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
+        )}
+      </Thumbnail>
+      <PublicationDescription>
+        <PublicationTitle>
+          {frontmatter.path ? (
+            <Link to={frontmatter.path}>{frontmatter.bib[0].title}</Link>
+          ) : (
+            frontmatter.bib[0].title
+          )}
+        </PublicationTitle>
+        <div>
+          <Authors authors={frontmatter.bib[0].authors}></Authors>
+        </div>
+        <a href={frontmatter.bib[0].url}>{frontmatter.bib[0].url}</a>
+
+        <PaperLinks frontmatter={frontmatter} />
+      </PublicationDescription>
+    </PublicationContainer>
+  )
+}
+
+// export const query = graphql``
 const IndexPage = ({ data }) => {
-  let publications = data.publications.nodes.map(
-    ({ childBib = {} }) => childBib
+  let publications = []
+
+  publications = map(data.publications.nodes, "childMdx.frontmatter").filter(
+    Boolean
   )
 
-  // TODO: use the keys and mdx frontmatter to pull in the rest of my information....
+  publications.forEach(pub => {
+    pub.yearInt = parseInt(pub.bib[0].year)
+    pub.monthInt = months[pub.bib[0].month]
+  })
+
+  publications = sortBy(publications, ["yearInt", "monthInt"]).reverse()
 
   return (
     <>
@@ -122,22 +189,68 @@ const IndexPage = ({ data }) => {
 
       <Content>
         <Header />
-        <About />
+        <About data={data} />
         <section id="publications">
           <h2>Publications</h2>
-          {publications.map(({ key }) => (
-            <Reference referenceKey={key} />
+          {publications.map(frontmatter => (
+            <Publication frontmatter={frontmatter} key={frontmatter.key} />
           ))}
         </section>
       </Content>
     </>
   )
 }
+let LinkItem = styled.a`
+  padding: 10px;
+`
+let LinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
-let About = () => {
+let About = ({ data }) => {
   return (
     <div>
-      <h1>Blaine Lewis</h1>scholar, blah, blah, blah.
+      <h1>Blaine Lewis</h1>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
+        <div style={{ padding: "10px" }}>
+          <Img fluid={data.profile.childImageSharp.fluid} />
+          <LinkContainer>
+            <LinkItem href="/resume">CV</LinkItem>
+            <LinkItem href="https://scholar.google.ca/citations?user=aDIlxvUAAAAJ&hl=en">
+              <img width="32" src={scholar} />
+            </LinkItem>
+            <LinkItem href="https://github.com/blainelewis1">
+              <img src={github} />
+            </LinkItem>
+            <LinkItem href="https://twitter.com/BlaineLewis15">
+              <img width="32" src={twitter} />
+            </LinkItem>
+          </LinkContainer>
+        </div>
+        <div style={{ padding: "10px" }}>
+          <p>
+            I am a PhD student at the University of Toronto working with
+            Professor <a href="https://tovigrossman.com">Tovi Grossman</a> in
+            the{" "}
+            <a herf="https://www.dgp.toronto.edu/">
+              Digital Graphics Project (DGP)
+            </a>
+            . My main area of research is human computer interaction (HCI).
+          </p>
+          <p>
+            My research interests vary widely depending on the week, but in
+            general my research aims to solve problems users encounter when
+            learning software. I mostly achieve this goal through designing new
+            interaction techniques, like <Link to="/KeyMap">KeyMap</Link>. But
+            more and more I've realised we don't truly understand why users fail
+            to learn software so I seek to understand underlying breakdowns
+            users experience while learning.
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

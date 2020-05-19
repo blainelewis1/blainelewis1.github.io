@@ -2,6 +2,24 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { find } from "lodash"
 import styled from "styled-components"
+import Authors from "./Authors"
+
+export const query = graphql`
+  fragment Reference on Bib {
+    key
+    year
+    title
+    type
+    series
+    publisher
+    url
+    booktitle
+    authors
+    pages
+    address
+    numpages
+  }
+`
 
 let ReferenceView = styled.div`
   margin-bottom:10px;
@@ -21,18 +39,7 @@ const Reference = ({ referenceKey, index }) => {
     query AllBibsAndAuthors {
       allBib {
         nodes {
-          key
-          year
-          title
-          type
-          series
-          publisher
-          url
-          booktitle
-          authors
-          pages
-          address
-          numpages
+          ...Reference
         }
       }
 
@@ -65,33 +72,34 @@ const Reference = ({ referenceKey, index }) => {
   } = bib
 
   //TODO: style the link nicer
-  let Author = ({ author }) => {
-    let authorText = author
-    if (author.toLowerCase() === "blaine lewis") {
-      authorText = <i>{author}</i>
-    }
+  // let Author = ({ author }) => {
+  //   let authorText = author
+  //   if (author.toLowerCase() === "blaine lewis") {
+  //     authorText = <i>{author}</i>
+  //   }
 
-    if (authorData[author]) {
-      return <a href={authorData[author]}>{authorText}</a>
-    } else {
-      return authorText
-    }
-  }
+  //   if (authorData[author]) {
+  //     return <a href={authorData[author]}>{authorText}</a>
+  //   } else {
+  //     return authorText
+  //   }
+  // }
 
-  authors = authors.map((author, i) => {
-    let isLastAuthor = i === authors.length - 1
-    let suffix = !isLastAuthor ? ", " : ""
-    let prefix = isLastAuthor ? "and " : ""
+  // authors = authors.map((author, i) => {
+  //   let isLastAuthor = i === authors.length - 1
+  //   let suffix = !isLastAuthor ? ", " : ""
+  //   let prefix = isLastAuthor ? "and " : ""
 
-    return (
-      <>
-        {prefix}
-        <Author author={author} />
-        {suffix}
-      </>
-    )
-  })
-  // TODO: bold title and anytime my name shows up.
+  //   return (
+  //     <>
+  //       {prefix}
+  //       <Author author={author} />
+  //       {suffix}
+  //     </>
+  //   )
+  // })
+
+  // TODO: bold title and link to pub anytime my name shows up.
 
   let referenceString = `. ${year}. ${title}. ${booktitle} (${series}). ${publisher}, ${address}, ${
     pages || `1-${numpages}`
@@ -99,7 +107,7 @@ const Reference = ({ referenceKey, index }) => {
 
   return (
     <ReferenceView index={index} id={referenceKey}>
-      {authors}
+      <Authors authors={authors} />
       {referenceString}
       <a href={url}>{url}</a>
     </ReferenceView>
