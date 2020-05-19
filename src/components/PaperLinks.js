@@ -16,15 +16,15 @@ const PaperLinks = ({ frontmatter }) => {
   return (
     <Container>
       {frontmatter?.preview && (
-        <Link to={frontmatter.preview}>
+        <a href={frontmatter.preview}>
           <InlineIcon className="material-icons">movie</InlineIcon> Preview
-        </Link>
+        </a>
       )}
 
       {frontmatter?.preview && (
-        <Link to={frontmatter.video}>
+        <a href={frontmatter.video}>
           <InlineIcon className="material-icons">movie</InlineIcon> Video
-        </Link>
+        </a>
       )}
 
       {frontmatter?.demo && <Link to={frontmatter.demo}>DEMO</Link>}
