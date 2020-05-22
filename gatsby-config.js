@@ -29,10 +29,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          publications: require.resolve("./src/templates/publication.js"),
-          pages: require.resolve("./src/templates/publication.js"),
-        },
+        // defaultLayouts: {
+        //   publications: require.resolve("./src/templates/publication.js"),
+        // },
         // extensions: [".mdx", ".md"],
         // a workaround to solve mdx-remark plugin compat issue
         // https://github.com/gatsbyjs/gatsby/issues/15486
@@ -62,5 +61,7 @@ module.exports = {
         path: `${__dirname}/content/publications`,
       },
     },
+    "gatsby-redirect-from",
+    "gatsby-plugin-meta-redirect",
   ],
 }
