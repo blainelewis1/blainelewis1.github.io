@@ -1,13 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import "../styles/basic-post.css"
 import Reference from "../components/Reference"
-import { find } from "lodash"
 import PaperLinks from "../components/PaperLinks"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import CopyOnClick from "../components/CopyOnClick"
-import { Helmet } from "react-helmet"
+import SEO from "../components/seo"
 
 // TODO: adding an outline to this page would be cool
 
@@ -25,6 +26,7 @@ let Container = styled.div`
   margin: auto;
   max-width: 800px;
 `
+
 let references = []
 
 let Cite = ({ referenceKey }) => {
@@ -53,18 +55,20 @@ let BibtexContainer = styled.div`
 // TODO: An improvement would be to make this a styled textarea, then it will select on click
 // TODO: a copied indicator thing would be good.
 
+// TODO: set user-select all better.
+
 let Bibtex = ({ children }) => {
   return (
     <BibtexContainer>
       <CopyOnClick content={children} />
-      <code>{children}</code>
+      <code style={{ userSelect: "all" }}>{children}</code>
     </BibtexContainer>
   )
 }
 
 let References = () => (
   <section>
-    <h2>References</h2>
+    {references.length > 0 && <h2>References</h2>}
     {references.map((key, index) => (
       <Reference index={index + 1} referenceKey={key} key={key} />
     ))}
@@ -83,69 +87,45 @@ let ImageList = ({ images }) => {
 
 let shortcodes = { Cite, Figure, ImageList }
 
-// export const pageQuery = graphql`
-//   query MdxBlogPost($id: String) {
-//     mdx(id: { eq: $id }) {
-//       id
-//     }
-
-//   }
-// `
-
-// TODO: add link to pdf, and videos, and etc.
-
-export default ({ children, pageContext, ...props }) => {
-  let data = useStaticQuery(graphql`
-    query AllBibsForPub {
-      allBib {
-        nodes {
-          key
+export const query = graphql`
+  query($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      excerpt
+      body
+      ...PaperLinks
+      frontmatter {
+        key
+        title
+        bib {
           content
         }
       }
-      allMdx {
-        nodes {
-          frontmatter {
-            pdf {
-              publicURL
-            }
-            key
-            path
-            preview
-            title
-            video
-          }
-          tableOfContents
-        }
+      fields {
+        slug
       }
     }
-  `)
+  }
+`
 
-  const bib =
-    find(data.allBib.nodes, {
-      key: pageContext.frontmatter.key.toLowerCase(),
-    }) || {}
-
-  const frontmatter = (
-    find(data.allMdx.nodes, {
-      frontmatter: { title: pageContext.frontmatter.title },
-    }) || { frontmatter: {} }
-  ).frontmatter
-
+export default ({ data }) => {
+  console.log("yo", data)
   return (
     <MDXProvider components={{ ...shortcodes }}>
-      <Helmet>
-        <title>{pageContext.frontmatter.title} | Blaine Lewis</title>
-      </Helmet>
+      <SEO
+        title={data.mdx.frontmatter.title}
+        description={data.mdx.excerpt}
+        canonical={data.mdx.fields.slug}
+      />
       <Container>
-        <h1>{pageContext.frontmatter.title}</h1>
-        {children}
+        <h1>{data.mdx.frontmatter.title}</h1>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
         <h2>Links + Info</h2>
-        <PaperLinks frontmatter={frontmatter} />
+        <PaperLinks frontmatter={data.mdx.frontmatter} />
         <br />
-        <Reference referenceKey={pageContext.frontmatter.key} />
+        <Reference referenceKey={data.mdx.frontmatter.key} />
 
-        <Bibtex>{bib.content}</Bibtex>
+        <Bibtex>{data.mdx.frontmatter.bib[0].content}</Bibtex>
         <References />
       </Container>
     </MDXProvider>

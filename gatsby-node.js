@@ -8,6 +8,18 @@
 
 const bibtex = require("bibtex")
 const _ = require("lodash")
+const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
+
+const bibToEntry = entry => {
+  let bibJson = bibToJson(entry)
+
+  return {
+    ...bibJson,
+    type: entry.type,
+    key: entry._id,
+  }
+}
 
 const bibToJson = entry => {
   let fields = Object.keys(entry.fields).reduce(
@@ -28,27 +40,38 @@ const bibToJson = entry => {
         .join(" ")
     )
 
-  let entryObject = {
-    ...fields,
-    authors,
-    type: entry.type,
-    key: entry._id,
-  }
-
-  return entryObject
+  return { ...fields, authors }
 }
 
-exports.onCreateNode = async ({
+const onCreateMdxNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  // you only want to operate on `Mdx` nodes. If you had content from a
+  // remote CMS you could also check to see if the parent node was a
+  // `File` node here
+  const value = createFilePath({ node, getNode })
+  const parent = getNode(node.parent)
+
+  createNodeField({
+    // Individual MDX node
+    node,
+    // Name of the field you are adding
+    name: "slug",
+    // Generated value based on filepath with "blog" prefix. you
+    // don't need a separating "/" before the value because
+    // createFilePath returns a path with the leading "/".
+    value: `${parent.sourceInstanceName}${value}`,
+  })
+}
+
+let onCreateBibtexNode = async ({
   node,
-  actions,
+  actions: { createNode, createParentChildLink },
   loadNodeContent,
   createNodeId,
   createContentDigest,
 }) =>
   // options
   {
-    const { createNode, createParentChildLink } = actions
-
     function transformObject(obj, id, type) {
       const bibtexNode = {
         ...obj,
@@ -66,14 +89,10 @@ exports.onCreateNode = async ({
       createParentChildLink({ parent: node, child: bibtexNode })
     }
 
-    if (node.extension !== `bib`) {
-      return
-    }
-
     const content = await loadNodeContent(node)
     const bib = bibtex.parseBibFile(content)
 
-    const parsedContent = Object.values(bib.entries$).map(bibToJson)
+    const parsedContent = Object.values(bib.entries$).map(bibToEntry)
 
     parsedContent.forEach((obj, i) => {
       transformObject(
@@ -84,8 +103,18 @@ exports.onCreateNode = async ({
       )
     })
   }
+exports.onCreateNode = async (...args) => {
+  let { node } = args[0]
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
+  if (node.internal.type === "Mdx") {
+    return onCreateMdxNode(...args)
+  }
+  if (node.extension === `bib`) {
+    return onCreateBibtexNode(...args)
+  }
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = [
     `
@@ -104,17 +133,61 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   createTypes(typeDefs)
 }
 
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /@blainelewis1\/keymap/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
+exports.createPages = async (...args) => {
+  await createMdxPages(...args)
+}
+
+const createMdxPages = async ({ graphql, actions, reporter }) => {
+  // Destructure the createPage function from the actions object
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allMdx {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              alias
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild('🚨 ERROR: Loading "createPages" query')
   }
+
+  // Create blog post pages.
+  const posts = result.data.allMdx.edges
+  // you'll call `createPage` for each result
+  posts.forEach(({ node }) => {
+    if (node.fields.slug) {
+      ;[
+        // node.fields.slug,
+        node.frontmatter.alias,
+        // node.fields.slug?.toLowerCase(),
+        // node.frontmatter.alias?.toLowerCase(),
+      ]
+        .filter(Boolean)
+        .forEach(thePath =>
+          createPage({
+            // This is the slug you created before
+            // (or `node.frontmatter.slug`)
+            path: thePath,
+            //TODO: need to pick template better, use the name
+            // This component will wrap our MDX content
+            component: path.resolve(`./src/templates/publication.js`),
+            // You can use the values in this context in
+            // our page layout component
+            context: { id: node.id },
+          })
+        )
+    }
+  })
 }

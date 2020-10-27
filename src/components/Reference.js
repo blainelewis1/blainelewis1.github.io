@@ -53,11 +53,6 @@ const Reference = ({ referenceKey, index }) => {
   `)
   const bib = find(query.allBib.nodes, { key: referenceKey.toLowerCase() })
 
-  let authorData = (query.allAuthorsJson.nodes || []).reduce(
-    (prev, { name, site }) => ({ ...prev, [name]: site }),
-    {}
-  )
-
   let {
     year,
     title,

@@ -1,64 +1,18 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { Helmet } from "react-helmet"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import SEO from "../components/seo"
 import { map, sortBy } from "lodash"
-import "../index.css"
 
-import github from "../../static/GitHub-Mark-32px.png"
+import "../index.css"
+import SEO from "../components/seo"
+import github from "../../static/GitHub-Mark-120px-plus.png"
 import twitter from "../../static/Twitter_Social_Icon_Circle_Color.png"
 import scholar from "../../static/scholar.png"
 import PaperLinks from "../components/PaperLinks"
 import Authors from "../components/Authors"
-
-let Content = styled.div`
-  max-width: 800px;
-  margin: auto;
-`
-
-let Nav = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-`
-let NavItem = styled.li`
-  display: inline-block;
-  margin-left: 10px;
-
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  a {
-    text-decoration: none;
-    color: #d95204;
-    font-weight: bold;
-    border-bottom: 2px solid #8c3503;
-    margin-left: 10px;
-  }
-
-  a:hover {
-    color: #8c3503;
-  }
-`
-
-let HeaderContainer = styled.header``
-let Header = () => {
-  return (
-    <HeaderContainer>
-      <Nav>
-        <NavItem>
-          <a href="#publications">publications</a>{" "}
-        </NavItem>
-        <NavItem>
-          <Link to="/artlike">artlike</Link>{" "}
-        </NavItem>
-      </Nav>
-    </HeaderContainer>
-  )
-}
+import Layout from "../components/Layout"
 
 let months = [
   "jan",
@@ -76,7 +30,7 @@ let months = [
 ].reduce((obj, cur, i) => ({ ...obj, [cur]: i }), {})
 
 export const query = graphql`
-  query MyQuery {
+  query {
     profile: file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 400, maxHeight: 400) {
@@ -89,12 +43,8 @@ export const query = graphql`
     ) {
       nodes {
         childMdx {
+          ...PaperLinks
           frontmatter {
-            preview
-            video
-            path
-            demo
-
             bib {
               month
               key
@@ -105,13 +55,9 @@ export const query = graphql`
               url
             }
 
-            pdf {
-              publicURL
-            }
-
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 150, maxHeight: 150) {
+                fluid(maxWidth: 150, maxHeight: 150, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -151,8 +97,8 @@ const Publication = ({ frontmatter }) => {
       </Thumbnail>
       <PublicationDescription>
         <PublicationTitle>
-          {frontmatter.path ? (
-            <Link to={frontmatter.path}>{frontmatter.bib[0].title}</Link>
+          {frontmatter.slug ? (
+            <Link to={frontmatter.slug}>{frontmatter.bib[0].title}</Link>
           ) : (
             frontmatter.bib[0].title
           )}
@@ -168,7 +114,6 @@ const Publication = ({ frontmatter }) => {
   )
 }
 
-// export const query = graphql``
 const IndexPage = ({ data }) => {
   let publications = []
 
@@ -185,18 +130,17 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO />
 
-      <Content>
-        <Header />
+      <Layout>
         <About data={data} />
         <section id="publications">
           <h2>Publications</h2>
           {publications.map(frontmatter => (
-            <Publication frontmatter={frontmatter} key={frontmatter.key} />
+            <Publication key={frontmatter.key} frontmatter={frontmatter} />
           ))}
         </section>
-      </Content>
+      </Layout>
     </>
   )
 }
@@ -208,35 +152,39 @@ let LinkContainer = styled.div`
   align-items: center;
   justify-content: center;
 `
+let AboutContainer = styled.div`
+  display: grid;
+  gridtemplatecolumns: 1fr 2fr;
+  gridgap: 20px;
+`
 
 let About = ({ data }) => {
   return (
     <div>
       <h1>Blaine Lewis</h1>
-
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
-        <div style={{ padding: "10px" }}>
+      <AboutContainer>
+        <div>
           <Img fluid={data.profile.childImageSharp.fluid} />
           <LinkContainer>
             <LinkItem href="/resume">CV</LinkItem>
             <LinkItem href="https://scholar.google.ca/citations?user=aDIlxvUAAAAJ&hl=en">
-              <img width="32" src={scholar} />
+              <img width="32" src={scholar} alt="Google Scholar logo" />
             </LinkItem>
             <LinkItem href="https://github.com/blainelewis1">
-              <img src={github} />
+              <img width="32" src={github} alt="Github logo" />
             </LinkItem>
             <LinkItem href="https://twitter.com/BlaineLewis15">
-              <img width="32" src={twitter} />
+              <img width="32" src={twitter} alt="Twitter logo" />
             </LinkItem>
           </LinkContainer>
         </div>
-        <div style={{ padding: "10px" }}>
+        <div>
           <p>
             I am a PhD student at the University of Toronto working with
             Professor <a href="https://tovigrossman.com">Tovi Grossman</a> in
             the{" "}
-            <a herf="https://www.dgp.toronto.edu/">
-              Digital Graphics Project (DGP)
+            <a href="https://www.dgp.toronto.edu/">
+              Dynamic Graphics Project (DGP)
             </a>
             . My main area of research is human computer interaction (HCI).
           </p>
@@ -246,11 +194,11 @@ let About = ({ data }) => {
             learning software. I mostly achieve this goal through designing new
             interaction techniques, like <Link to="/KeyMap">KeyMap</Link>. But
             more and more I've realised we don't truly understand why users fail
-            to learn software so I seek to understand underlying breakdowns
+            to learn software so I seek to understand the underlying breakdowns
             users experience while learning.
           </p>
         </div>
-      </div>
+      </AboutContainer>
     </div>
   )
 }

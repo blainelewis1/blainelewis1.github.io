@@ -27,7 +27,7 @@ const Authors = ({ authors }) => {
       authorText = <i>{author}</i>
     }
 
-    if (authorData[author]) {
+    if (authorData[author.replace("*")]) {
       return <a href={authorData[author]}>{authorText}</a>
     } else {
       return authorText
@@ -42,7 +42,7 @@ const Authors = ({ authors }) => {
         let prefix = isLastAuthor ? "and " : ""
 
         return (
-          <span>
+          <span key={author}>
             {prefix}
             <Author author={author} />
             {suffix}

@@ -6,6 +6,7 @@ import Icon from "./Icon"
 const GreyClickingIcon = styled(Icon)`
   cursor: pointer;
   color: #777;
+  user-select: none;
 `
 
 const FileCopyIcon = () => <GreyClickingIcon>file_copy</GreyClickingIcon>

@@ -1,42 +1,48 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+let Nav = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+`
+let NavItem = styled.li`
+  display: inline-block;
+  margin-left: 10px;
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
-Header.defaultProps = {
-  siteTitle: ``,
+  a {
+    text-decoration: none;
+    color: #d95204;
+    font-weight: bold;
+    border-bottom: 2px solid #8c3503;
+    margin-left: 10px;
+  }
+
+  a:hover {
+    color: #8c3503;
+  }
+`
+
+let HeaderContainer = styled.header``
+let Header = () => {
+  return (
+    <HeaderContainer>
+      <Nav>
+        <NavItem>
+          <Link to="/#publications">publications</Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/artlike">artlike</Link>
+        </NavItem>
+      </Nav>
+    </HeaderContainer>
+  )
 }
 
 export default Header

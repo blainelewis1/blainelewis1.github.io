@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Blaine Lewis`,
-    description: `This is the personal website of Blaine Lewis.`,
+    description: `Blaine Lewis is a second year PhD student at the University of Toronto, this is his personal website. You can find his publications, demos and more here.`,
     author: `@blainelewis1`,
+    baseUrl: "http://blainelewis.ca",
   },
   plugins: [
     {
@@ -31,6 +32,8 @@ module.exports = {
       options: {
         // defaultLayouts: {
         //   publications: require.resolve("./src/templates/publication.js"),
+        //   // default: require.resolve("./src/templates/publication.js"),
+        //   default: require.resolve("./src/pages/publication.js"),
         // },
         // extensions: [".mdx", ".md"],
         // a workaround to solve mdx-remark plugin compat issue
@@ -55,13 +58,24 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-plugin-page-creator`,
+    //   options: {
+    //     path: `${__dirname}/content/publications`,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        path: `${__dirname}/content/publications`,
+        name: `Blaine Lewis`,
+        short_name: `Blaine Lewis`,
+        description: `Blaine Lewis is a first year PhD student at the University of Toronto, this is his personal website. You can find his publications, demos and more here.`,
+        lang: `en`,
+        icon: `src/squiggle-favicon.svg`,
+        start_url: `/`,
+        background_color: `#d95204`,
+        theme_color: `#fff`,
       },
     },
-    "gatsby-redirect-from",
-    "gatsby-plugin-meta-redirect",
   ],
 }
