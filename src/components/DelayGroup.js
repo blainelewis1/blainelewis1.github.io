@@ -4,7 +4,7 @@ import { max } from "lodash"
 
 const DelayGroup = ({ delays, framerate = 20, padding = 500 }) => {
   let [timeStarted, setTimeStarted] = useState(Date.now())
-  let [_, setFrame] = useState(0)
+  let [, setFrame] = useState(0)
 
   useEffect(() => {
     let id = setInterval(() => setFrame(frame => frame + 1), 1000 / framerate)

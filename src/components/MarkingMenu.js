@@ -75,7 +75,7 @@ const MarkingMenu = ({
         refValue.parentElement.removeEventListener("mouseup", hideGuide)
       }
     }
-  }, [ref.current])
+  }, [delay])
 
   let radius = 150
   let width, height

@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { Helmet } from "react-helmet"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { map, sortBy } from "lodash"
@@ -137,7 +136,10 @@ const IndexPage = ({ data }) => {
         <section id="publications">
           <h2>Publications</h2>
           {publications.map(frontmatter => (
-            <Publication key={frontmatter.key} frontmatter={frontmatter} />
+            <Publication
+              key={frontmatter.bib[0].key}
+              frontmatter={frontmatter}
+            />
           ))}
         </section>
       </Layout>
@@ -154,8 +156,12 @@ let LinkContainer = styled.div`
 `
 let AboutContainer = styled.div`
   display: grid;
-  gridtemplatecolumns: 1fr 2fr;
-  gridgap: 20px;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+
+  @media (max-width: 480px) {
+    display: block;
+  }
 `
 
 let About = ({ data }) => {
@@ -163,7 +169,7 @@ let About = ({ data }) => {
     <div>
       <h1>Blaine Lewis</h1>
       <AboutContainer>
-        <div>
+        <div style={{ maxWidth: "400px" }}>
           <Img fluid={data.profile.childImageSharp.fluid} />
           <LinkContainer>
             <LinkItem href="/resume">CV</LinkItem>

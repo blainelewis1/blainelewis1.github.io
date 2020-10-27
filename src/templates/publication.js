@@ -16,7 +16,7 @@ import SEO from "../components/seo"
 const Figure = ({ data, caption }) => {
   return (
     <figure>
-      <object data={data} type="image/svg+xml"></object>
+      <object aria-label={caption} data={data} type="image/svg+xml"></object>
       <figcaption>{caption}</figcaption>
     </figure>
   )
