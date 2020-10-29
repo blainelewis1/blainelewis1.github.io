@@ -137,6 +137,11 @@ exports.createPages = async (...args) => {
   await createMdxPages(...args)
 }
 
+let templates = {
+  publications: `./src/templates/publication.js`,
+  blog: `./src/templates/blog.js`,
+}
+
 const createMdxPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
@@ -145,6 +150,11 @@ const createMdxPages = async ({ graphql, actions, reporter }) => {
       allMdx {
         edges {
           node {
+            parent {
+              ... on File {
+                sourceInstanceName
+              }
+            }
             id
             fields {
               slug
@@ -169,7 +179,7 @@ const createMdxPages = async ({ graphql, actions, reporter }) => {
   posts.forEach(({ node }) => {
     if (node.fields.slug) {
       ;[
-        // node.fields.slug,
+        node.fields.slug,
         node.frontmatter.alias,
         // node.fields.slug?.toLowerCase(),
         // node.frontmatter.alias?.toLowerCase(),
@@ -182,7 +192,7 @@ const createMdxPages = async ({ graphql, actions, reporter }) => {
             path: thePath,
             //TODO: need to pick template better, use the name
             // This component will wrap our MDX content
-            component: path.resolve(`./src/templates/publication.js`),
+            component: path.resolve(templates[node.parent.sourceInstanceName]),
             // You can use the values in this context in
             // our page layout component
             context: { id: node.id },

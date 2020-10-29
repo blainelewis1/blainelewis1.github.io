@@ -22,6 +22,7 @@
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-page-creator": "^2.3.0",
     "gatsby-plugin-react-helmet": "^3.3.0",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.0",
     "gatsby-plugin-styled-components": "^3.3.0",
     "gatsby-redirect-from": "^0.2.2",
@@ -33,10 +34,14 @@
     "gatsby-transformer-sharp": "^2.5.0",
     "gh-pages": "^2.2.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^17.0.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
-    "styled-components": "^5.1.0"
+    "react-vega": "^7.4.1",
+    "styled-components": "^5.1.0",
+    "styled-icons": "^10.22.0",
+    "vega": "^5.17.0",
+    "vega-lite": "^4.17.0"
   },
   "devDependencies": {
     "prettier": "2.0.5"

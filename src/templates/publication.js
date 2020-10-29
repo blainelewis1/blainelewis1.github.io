@@ -109,7 +109,6 @@ export const query = graphql`
 `
 
 export default ({ data }) => {
-  console.log("yo", data)
   return (
     <MDXProvider components={{ ...shortcodes }}>
       <SEO

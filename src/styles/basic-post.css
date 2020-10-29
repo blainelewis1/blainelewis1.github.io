@@ -20,3 +20,16 @@ figure {
   color: #444;
   font-size: 0.9em;
 }
+
+img {
+  text-align: center;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

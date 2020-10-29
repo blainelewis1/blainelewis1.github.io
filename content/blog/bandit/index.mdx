@@ -1,0 +1,73 @@
+---
+title: '"Pull the Lever Kronk!"'
+---
+
+import GraphBandit from "./GraphBandit"
+import Bandit from "./Bandit"
+import AnimatedBandit from "./AnimatedBandit"
+import { randomBernoulli } from "d3"
+import { epsilonGreedy, ucb, thompsonSampling } from "./algorithms"
+
+_This page isn't really intended for your learning, instead this is my attempt to understand how bandits work. I hope it also helps you._
+
+Bandits are levers you pull to get some reward. In this post, we'll talk about Bernoulli bandits which are special bandits that yield either a 1 or 0, or a success or a failure.
+
+![Emperor's new groove, pull the lever Kronk](https://media.giphy.com/media/14rfBl2RMAHtCM/giphy.gif)
+
+<AnimatedBandit
+  graphs={false}
+  history={false}
+  pullLots={false}
+  controls={false}
+  bandits={[randomBernoulli(0.8)]}
+/>
+
+The distribution underlying a bandit isn't necessarily uniform, as seen above. And you can put multiple bandits together, each with a different underlying reward function.
+
+<AnimatedBandit
+  graphs={false}
+  controls={false}
+  bandits={[randomBernoulli(0.6), randomBernoulli(0.4)]}
+/>
+
+It then becomes difficult to know which bandit to pick.
+
+![Emperor's new groove, wrong lever Kronk!](https://media.giphy.com/media/11Pl7vl0Feh2Cc/giphy.gif)
+
+There is a tradeoff, every time you pull a bandit, you learn a little bit more about that bandit, but you are also missing out on pulling another bandit. This is the _explore_ and _exploit_ tradeoff.
+
+### Epsilon Greedy
+
+There are however algorithms for dealing with this. The most simple one says that for most lever pulls we will choose the arm that we calculate to give the highest average reward. But every once in a while we will explore and try a random lever.
+
+<AnimatedBandit
+  bandits={[randomBernoulli(0.2), randomBernoulli(0.8)]}
+  algorithm={epsilonGreedy()}
+/>
+
+### UCB
+
+But this has many problems, one of the bigger problems is that after many iterations we no longer need to explore. That's where UCB comes in. UCB says, let's favour bandits with higher average reward, but also understand that for bandits without many pulls we should explore them once in a while.
+
+<AnimatedBandit
+  bandits={[randomBernoulli(0.2), randomBernoulli(0.8)]}
+  algorithm={ucb}
+/>
+
+### Thompson Sampling
+
+A final approach is based on Bayesian statistics. Rather than modelling what we think the estimate is, we also model how confident we are in that estimate by sampling from a beta distribution that models the bandit as a prior. As we get more samples we become more confident.
+
+<AnimatedBandit
+  bandits={[randomBernoulli(0.2), randomBernoulli(0.8)]}
+  algorithm={thompsonSampling}
+/>
+
+<AnimatedBandit
+  bandits={[randomBernoulli(0.4), randomBernoulli(0.6), randomBernoulli(0.1)]}
+  algorithm={thompsonSampling}
+/>
+
+# Attributions
+
+lever by Deemak Daksina from the Noun Project

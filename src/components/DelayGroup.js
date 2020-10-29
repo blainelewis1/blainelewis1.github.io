@@ -11,7 +11,6 @@ const DelayGroup = ({ delays, framerate = 20, padding = 500 }) => {
 
     return () => clearInterval(id)
   })
-  console.log("render")
   let timePassed = Date.now() - timeStarted
 
   if (timePassed >= max(delays) + padding) {
